@@ -17,7 +17,7 @@
   
   <meta property="og:type" content="website">
 <meta property="og:title" content="琼喵酱·部落">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/search/index.html">
 <meta property="og:site_name" content="琼喵酱·部落">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/null">
@@ -131,89 +131,34 @@
 
         
 
-            
-    
-    
-        <article class="kratos-hentry clearfix">
-            <div class="kratos-entry-border-new clearfix">
-                
-                    <div class="pin-top wrapper">
-                        <div class="pin-top inner"></div>
-                    </div>
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2021/09/20/%E6%94%B6%E5%BD%95%E4%B8%80%E4%BA%9B%E9%86%8D%E9%86%90%E7%81%8C%E9%A1%B6%E7%9A%84%E7%9F%A5%E8%AF%86/">
-                        
-                            <img class="kratos-entry-thumb-new-img">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2021/09/20/%E6%94%B6%E5%BD%95%E4%B8%80%E4%BA%9B%E9%86%8D%E9%86%90%E7%81%8C%E9%A1%B6%E7%9A%84%E7%9F%A5%E8%AF%86/">收录一些醍醐灌顶的知识</a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p>
-                            
-                                1.深拷贝和浅拷贝详解https://blog.csdn.net/jiang7701037/article/details/98738487
-2.对于JavaScript原生的JShttps://www.cnblogs.com/xyq...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <a>
-                            <i class="fa fa-calendar"></i>
-                            2021-09-20
-                        </a>
-                        <a>
-                            
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2021/09/20/%E6%94%B6%E5%BD%95%E4%B8%80%E4%BA%9B%E9%86%8D%E9%86%90%E7%81%8C%E9%A1%B6%E7%9A%84%E7%9F%A5%E8%AF%86/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-    <div class='text-center pagination'>
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+            <div class="kratos-hentry kratos-post-inner clearfix">
+    <div class="kratos-post-content">
+        <h2 class="title-h2 text-center">搜索</h2>
+        <form class="input-group" onsubmit="return inpSearch();">
+            <input class="form-input input-lg" id="search-input" maxlength="80" name="s" placeholder="有什么想找找看的呢o(*￣▽￣*)ブ" required type="search">
+            <button class="btn btn-primary" type="submit">找一找~</button>
+        </form>
     </div>
+</div>
 
+<div class="alert alert-info" id="kr-search-notice">
+    这里是 琼喵酱·部落 的搜索引擎~
+</div>
 
-
-    <div class="hidden">
-        <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
-        
+<div id="result-posts">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <div class="kratos-post-content">
+            <p>搜索多个关键词时请用空格分割，例如「hexo wamp vue」这样；</p>
+            <p>您也可以使用这些标签碰碰运气哦~</p>
+            <p class="search-demo-tags">
+                <a href="/tags/hexo/" style="font-size: 18px; color: #b2b7be">hexo</a> <a href="/tags/wamp/" style="font-size: 18px; color: #b2b7be">wamp</a> <a href="/tags/vue/" style="font-size: 24px; color: #6c7588">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 18px; color: #b2b7be">前端</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 18px; color: #b2b7be">微信小程序</a> <a href="/tags/css/" style="font-size: 18px; color: #b2b7be">css</a> <a href="/tags/egg/" style="font-size: 18px; color: #b2b7be">egg</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 18px; color: #b2b7be">flex弹性布局</a> <a href="/tags/HTTP/" style="font-size: 18px; color: #b2b7be">HTTP</a> <a href="/tags/npm/" style="font-size: 18px; color: #b2b7be">npm</a> <a href="/tags/node/" style="font-size: 18px; color: #b2b7be">node</a> <a href="/tags/koa/" style="font-size: 18px; color: #b2b7be">koa</a>
+            </p>
+        </div>
     </div>
+</div>
 
-
+<script>var searchDataFile = "/search.json";</script>
+<script defer src="/js/local-search.min.js"></script>
 
         
 
