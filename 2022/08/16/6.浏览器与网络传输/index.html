@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>6.浏览器 | 橘知·部落</title>
+  <meta name="author" content="zengqm" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="浏览器" />
+  
+  <meta name="description" content="浏览器在浏览器中输入url并回车会发生什么？1.浏览器拿到url后解析url，获取到域名2.通过域名解析服务器进行域名解析,获取到域名对应的ip地址3.接下来就是对该ip地址对应的服务器发起tcp连接4.通过三次握手，建立客户端和服务器的连接，就可以进行请求和传输数据了5.客户端拿到服务器传输过来的文件，最后由浏览器渲染到页面上。 【5.客户端拿到服务器传输过来的文件，浏览器会解析html源码创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6.浏览器">
+<meta property="og:url" content="http://example.com/2022/08/16/6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93/index.html">
+<meta property="og:site_name" content="橘知·部落">
+<meta property="og:description" content="浏览器在浏览器中输入url并回车会发生什么？1.浏览器拿到url后解析url，获取到域名2.通过域名解析服务器进行域名解析,获取到域名对应的ip地址3.接下来就是对该ip地址对应的服务器发起tcp连接4.通过三次握手，建立客户端和服务器的连接，就可以进行请求和传输数据了5.客户端拿到服务器传输过来的文件，最后由浏览器渲染到页面上。 【5.客户端拿到服务器传输过来的文件，浏览器会解析html源码创建">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2022-08-16T15:40:26.438Z">
+<meta property="article:modified_time" content="2022-09-12T02:33:42.208Z">
+<meta property="article:author" content="zengqm">
+<meta property="article:tag" content="浏览器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">橘知·部落</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>橘知·部落</h2> <br />
+                        <span>活在自己的热爱里</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article>
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center">6.浏览器</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><i class="fa fa-calendar"></i> 2022-08-16</li>
+                <li><i class="fa fa-user"></i> 作者 zengqm</li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~17.55K
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                本文最后编辑于 <time datetime="1662950022208"></time> 前，其中的内容可能需要更新。
+            </div>
+            
+                <div class="kratos-post-inner-toc">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5url%E5%B9%B6%E5%9B%9E%E8%BD%A6%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">在浏览器中输入url并回车会发生什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%9A%84%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">浏览器如何渲染页面的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-sessionStorage-localStorage-%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.</span> <span class="toc-text">cookie sessionStorage localStorage 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-session"><span class="toc-number">1.4.</span> <span class="toc-text">cookie session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E4%B8%8EsessionStorage"><span class="toc-number">1.5.</span> <span class="toc-text">session与sessionStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%B8%AA%E4%BC%9A%E8%BF%87%E6%9C%9F%E7%9A%84localStorage%EF%BC%8C%E8%AF%B4%E8%AF%B4%E6%83%B3%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">如何写一个会过期的localStorage，说说想法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4localstorage%E6%95%B0%E6%8D%AE"><span class="toc-number">1.7.</span> <span class="toc-text">如何定时删除localstorage数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage-%E8%83%BD%E8%B7%A8%E5%9F%9F%E5%90%97"><span class="toc-number">1.8.</span> <span class="toc-text">localStorage 能跨域吗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localstorage%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-number">1.9.</span> <span class="toc-text">localstorage的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BB%98%E3%80%81%E9%87%8D%E6%8E%92%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D"><span class="toc-number">1.10.</span> <span class="toc-text">重绘、重排区别如何避免</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AFEvent-loop"><span class="toc-number">1.11.</span> <span class="toc-text">事件循环Event loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="toc-number">1.12.</span> <span class="toc-text">浏览器垃圾回收机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-number">2.</span> <span class="toc-text">网络传输</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">跨域是什么？如何解决跨域？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.2.</span> <span class="toc-text">跨域解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsonp"><span class="toc-number">2.3.</span> <span class="toc-text">jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-number">2.4.</span> <span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cors"><span class="toc-number">2.5.</span> <span class="toc-text">cors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">2.6.</span> <span class="toc-text">nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%BB%A3%E7%90%86-%E4%B8%A4%E6%AC%A1%E8%B7%A8%E5%9F%9F"><span class="toc-number">2.7.</span> <span class="toc-text">Node中间件代理(两次跨域)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postMessage"><span class="toc-number">2.8.</span> <span class="toc-text">postMessage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket"><span class="toc-number">2.9.</span> <span class="toc-text">websocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#window-name-iframe"><span class="toc-number">2.10.</span> <span class="toc-text">window.name + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location-hash-iframe"><span class="toc-number">2.11.</span> <span class="toc-text">location.hash + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-domain-iframe"><span class="toc-number">2.12.</span> <span class="toc-text">document.domain + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E4%BF%9D%E6%8C%81%E5%89%8D%E5%90%8E%E7%AB%AF%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">2.13.</span> <span class="toc-text">有什么方法可以保持前后端实时通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81http-status"><span class="toc-number">2.14.</span> <span class="toc-text">常见http status</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%92%8Chttps"><span class="toc-number">2.15.</span> <span class="toc-text">http和https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%92%8CHTTPS%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.15.1.</span> <span class="toc-text">HTTP和HTTPS的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E4%B8%8EHTTPS%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.15.2.</span> <span class="toc-text">HTTP与HTTPS有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http1-x-%E5%92%8Chttp2-x%E5%8C%BA%E5%88%AB"><span class="toc-number">2.16.</span> <span class="toc-text">http1.x 和http2.x区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="toc-number">2.17.</span> <span class="toc-text">http请求方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET%E5%92%8CPOST%E5%8C%BA%E5%88%AB"><span class="toc-number">2.18.</span> <span class="toc-text">GET和POST区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="toc-number">2.19.</span> <span class="toc-text">http 缓存策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8B-HTTPS-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">2.20.</span> <span class="toc-text">介绍下 HTTPS 中间人攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-%E6%98%AF%E5%A6%82%E4%BD%95%E7%A1%AE%E4%BF%9D%E6%9C%89%E6%95%88%E4%BC%A0%E8%BE%93%E7%9A%84%EF%BC%8C%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-number">2.21.</span> <span class="toc-text">tcp 是如何确保有效传输的，拥塞控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-ip%E5%8D%8F%E8%AE%AE%E6%A0%88%E3%80%81%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.22.</span> <span class="toc-text">tcp&#x2F;ip协议栈、网络模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.23.</span> <span class="toc-text">OSI七层协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAajax%E8%BF%87%E7%A8%8B"><span class="toc-number">2.24.</span> <span class="toc-text">创建ajax过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios%E7%9A%84%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8"><span class="toc-number">2.25.</span> <span class="toc-text">axios的拦截器原理及应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">2.25.1.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.25.2.</span> <span class="toc-text">拦截器的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xhr-%E7%9A%84-readyState"><span class="toc-number">2.26.</span> <span class="toc-text">xhr 的 readyState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN"><span class="toc-number">2.27.</span> <span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cdn%E5%8A%A0%E9%80%9F%E5%8E%9F%E7%90%86"><span class="toc-number">2.28.</span> <span class="toc-text">cdn加速原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSL-%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%EF%BC%9F"><span class="toc-number">2.29.</span> <span class="toc-text">SSL 连接断开后如何恢复？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hosts-%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">2.30.</span> <span class="toc-text">hosts 文件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-number">2.31.</span> <span class="toc-text">什么是粘包问题，如何解决？</span></a></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><h2 id="在浏览器中输入url并回车会发生什么？"><a href="#在浏览器中输入url并回车会发生什么？" class="headerlink" title="在浏览器中输入url并回车会发生什么？"></a>在浏览器中输入url并回车会发生什么？</h2><p>1.浏览器拿到url后解析url，获取到域名<br>2.通过域名解析服务器进行域名解析,获取到域名对应的ip地址<br>3.接下来就是对该ip地址对应的服务器发起tcp连接<br>4.通过三次握手，建立客户端和服务器的连接，就可以进行请求和传输数据了<br>5.客户端拿到服务器传输过来的文件，最后由浏览器渲染到页面上。</p>
+<p>【5.客户端拿到服务器传输过来的文件，浏览器会解析html源码创建一个dom树，<br>浏览器解析css代码计算出最终的样式数据，形成一个css对象模型，<br>利用dom树和css对象模型构建一个渲染树，<br>浏览器根据渲染树把页面绘制到屏幕上。】</p>
+<p>URL 解析<br>DNS 查询<br>TCP 连接<br>处理请求<br>接受响应<br>渲染页面</p>
+<h2 id="浏览器如何渲染页面的？"><a href="#浏览器如何渲染页面的？" class="headerlink" title="浏览器如何渲染页面的？"></a>浏览器如何渲染页面的？</h2><ol>
+<li>HTML 被 HTML 解析器解析成 DOM 树；</li>
+<li>CSS 被 CSS 解析器解析成 CSSOM（css对象模型） 树；</li>
+<li>结合 DOM 树和 CSSOM 树，生成一棵渲染树(Render Tree)，这一过程称为 Attachment；</li>
+<li>生成布局(flow)，浏览器在屏幕上“画”出渲染树中的所有节点；</li>
+<li>将布局绘制(paint)在屏幕上，显示出整个页面。</li>
+</ol>
+<h2 id="cookie-sessionStorage-localStorage-区别"><a href="#cookie-sessionStorage-localStorage-区别" class="headerlink" title="cookie sessionStorage localStorage 区别"></a>cookie sessionStorage localStorage 区别</h2><p>共同点：都是保存在浏览器端、且同源的</p>
+<p>区别：</p>
+<ol>
+<li>cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递，而sessionStorage和localStorage不会自动把数据发送给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下</li>
+<li>存储大小限制也不同，cookie数据不能超过4K，同时因为每次http请求都会携带cookie、所以cookie只适合保存很小的数据，如会话标识。sessionStorage和localStorage虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大</li>
+<li>数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭之前有效；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie：只在设置的cookie过期时间之前有效，即使窗口关闭或浏览器关闭</li>
+<li>作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localstorage在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的</li>
+<li>web Storage（Web Storage实际上由两部分组成：sessionStorage与localStorage）支持事件通知机制，可以将数据更新的通知发送给监听者</li>
+<li>web Storage的api接口使用更方便</li>
+</ol>
+<h2 id="cookie-session"><a href="#cookie-session" class="headerlink" title="cookie session"></a>cookie session</h2><ol>
+<li>cookie数据存放在客户的浏览器上，session数据放在服务器上。</li>
+<li>session会在一定时间内保存在服务器上。<br>当访问增多，会比较占用你服务器的性能。考虑到减轻服务器性能方面，应当使用cookie。</li>
+</ol>
+<p>sessionStorage是当前对话的缓存，浏览器窗口关闭即消失，<br>localStorage持久存在，除非清除浏览器缓存。</p>
+<p>如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，<br>非常浪费流量，所以不如隔离开。<br>因为cookie有域的限制，因此不能跨域提交请求，故使用非主要域名的时候，<br>请求头中就不会带有cookie数据，<br>这样可以降低请求头的大小，降低请求时间，从而达到降低整体请求延时的目的。</p>
+<h2 id="session与sessionStorage"><a href="#session与sessionStorage" class="headerlink" title="session与sessionStorage"></a>session与sessionStorage</h2><p>事实上，两者没有任何关联。<br>如果要强行联系，也就是两者在名称中都包含”session”这个单词。<br>Session位于服务器端，sessionStorage位于客户端，无任何关联。<br>（1）Session翻译成汉语具有”会话”的意思，它用于维护HTTP会话状态。<br>（2）顾名思义，sessionStorage就是”会话期间存储”的意思。<br>（3）sessionStorage会话周期（生命周期）会在网页选项卡或者浏览器窗口关闭时结束。</p>
+<p>二.两者区别总结：<br>（1）sessionStorage存储在客户端，Session在服务器端。<br>（2）Session主要用于维护会话状态。<br>（3）sessionStorage则是在会话期间存储相关数据。</p>
+<p>但是Session与sessionStorage会话周期是不同的，下面简单介绍如下：<br>（1）关闭浏览器或者服务器端Session过期，会话结束。<br>（2）关闭当前选项卡或者浏览器窗口，sessionStorage数据被删除，也就算会话结束。<br>特别说明：在新标签或窗口打开一个页面会初始化一个新的会话，即便链接相同也是如此。</p>
+<h2 id="如何写一个会过期的localStorage，说说想法"><a href="#如何写一个会过期的localStorage，说说想法" class="headerlink" title="如何写一个会过期的localStorage，说说想法"></a>如何写一个会过期的localStorage，说说想法</h2><h2 id="如何定时删除localstorage数据"><a href="#如何定时删除localstorage数据" class="headerlink" title="如何定时删除localstorage数据"></a>如何定时删除localstorage数据</h2><h2 id="localStorage-能跨域吗"><a href="#localStorage-能跨域吗" class="headerlink" title="localStorage 能跨域吗"></a>localStorage 能跨域吗</h2><h2 id="localstorage的限制"><a href="#localstorage的限制" class="headerlink" title="localstorage的限制"></a>localstorage的限制</h2><h2 id="重绘、重排区别如何避免"><a href="#重绘、重排区别如何避免" class="headerlink" title="重绘、重排区别如何避免"></a>重绘、重排区别如何避免</h2><ol>
+<li><p>重排(Reflow)：当渲染树的一部分必须更新并且节点的尺寸发生了变化，浏览器会使渲染树中受到影响的部分失效，并重新构造渲染树。</p>
+</li>
+<li><p>重绘(Repaint)：是在一个元素的外观被改变所触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使元素呈现新的外观。比如改变某个元素的背景色、文字颜色、边框颜色等等</p>
+</li>
+<li><p>区别：重绘不一定需要重排（比如颜色的改变），重排必然导致重绘（比如改变网页位置）</p>
+</li>
+<li><p>引发重排</p>
+</li>
+<li><p>1 添加、删除可见的dom</p>
+</li>
+<li><p>2 元素的位置改变</p>
+</li>
+<li><p>3 元素的尺寸改变(外边距、内边距、边框厚度、宽高、等几何属性)</p>
+</li>
+<li><p>4 页面渲染初始化</p>
+</li>
+<li><p>5 浏览器窗口尺寸改变</p>
+</li>
+<li><p>6 获取某些属性。当获取一些属性时，浏览器为取得正确的值也会触发重排,它会导致队列刷新，这些属性包括：offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight、getComputedStyle() (currentStyle in IE)。所以，在多次使用这些值时应进行缓存。</p>
+</li>
+<li><p>优化：</p>
+</li>
+<li><p>1 浏览器自己的优化：<br>浏览器会维护1个队列，把所有会引起重排，重绘的操作放入这个队列，等队列中的操作到一定数量或者到了一定时间间隔，浏览器就会flush队列，进行一批处理，这样多次重排，重绘变成一次重排重绘</p>
+</li>
+<li><p>2 减少 reflow/repaint：<br>（1）不要一条一条地修改 DOM 的样式。可以先定义好 css 的 class，然后修改 DOM 的 className。<br>（2）不要把 DOM 结点的属性值放在一个循环里当成循环里的变量。<br>（3）为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是不会 reflow 的。<br>（4）千万不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局。(table及其内部元素除外，它可能需要多次计算才能确定好其在渲染树中节点的属性，通常要花3倍于同等元素的时间。这也是为什么我们要避免使用table做布局的一个原因。)<br>（5）不要在布局信息改变的时候做查询（会导致渲染队列强制刷新）</p>
+</li>
+</ol>
+<h2 id="事件循环Event-loop"><a href="#事件循环Event-loop" class="headerlink" title="事件循环Event loop"></a>事件循环Event loop</h2><p>主线程从”任务队列”中读取执行事件，这个过程是循环不断的，这个机制被称为事件循环。此机制具体如下:主 线程会不断从任务队列中按顺序取任务执行，每执行完一个任务都会检查microtask队列是否为空（执行完一个 任务的具体标志是函数执行栈为空），如果不为空则会一次性执行完所有microtask。然后再进入下一个循环去 任务队列中取下一个任务执行。</p>
+<p>详细步骤：</p>
+<ol>
+<li>选择当前要执行的宏任务队列，选择一个最先进入任务队列的宏任务，如果没有宏任务可以选择，则会 跳转至microtask的执行步骤。</li>
+<li>将事件循环的当前运行宏任务设置为已选择的宏任务。</li>
+<li>运行宏任务。</li>
+<li>将事件循环的当前运行任务设置为null。</li>
+<li>将运行完的宏任务从宏任务队列中移除。</li>
+<li>microtasks步骤：进入microtask检查点。</li>
+<li>更新界面渲染。</li>
+<li>返回第一步。<br>执行进入microtask检查的的具体步骤如下:</li>
+<li>设置进入microtask检查点的标志为true。</li>
+<li>当事件循环的微任务队列不为空时：选择一个最先进入microtask队列的microtask；设置事件循环的当 前运行任务为已选择的microtask；运行microtask；设置事件循环的当前运行任务为null；将运行结束 的microtask从microtask队列中移除。</li>
+<li>对于相应事件循环的每个环境设置对象（environment settings object）,通知它们哪些promise为 rejected。</li>
+<li>清理indexedDB的事务。</li>
+<li>设置进入microtask检查点的标志为false。<br>需要注意的是:当前执行栈执行完毕时会立刻先处理所有微任务队列中的事件, 然后再去宏任务队列中取出一个 事件。同一次事件循环中, 微任务永远在宏任务之前执行。</li>
+</ol>
+<h2 id="浏览器垃圾回收机制"><a href="#浏览器垃圾回收机制" class="headerlink" title="浏览器垃圾回收机制"></a>浏览器垃圾回收机制</h2><h1 id="网络传输"><a href="#网络传输" class="headerlink" title="网络传输"></a>网络传输</h1><h2 id="跨域是什么？如何解决跨域？"><a href="#跨域是什么？如何解决跨域？" class="headerlink" title="跨域是什么？如何解决跨域？"></a>跨域是什么？如何解决跨域？</h2><ol>
+<li><p>什么是同源策略？<br>同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。<br>所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。<br><code>https://www.nowcoder.com:8080/courses</code><br>https:// 协议<br><a target="_blank" rel="noopener" href="http://www.nowcoder.com/">www.nowcoder.com</a> 域名<br>:8080 端口号<br>/courses 请求资源地址</p>
+</li>
+<li><p>同源策略限制内容有?</p>
+</li>
+</ol>
+<ul>
+<li>Cookie、LocalStorage、IndexedDB 等存储性内容</li>
+<li>DOM 节点</li>
+<li>AJAX 请求发送后，结果被浏览器拦截了<br>但是有三个标签是允许跨域加载资源：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;xxx&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+跨域并不是请求发不出去，请求能发出去，服务端能收到请求并正常返回结果，只是结果被浏览器拦截了。</li>
+</ul>
+<h2 id="跨域解决方案"><a href="#跨域解决方案" class="headerlink" title="跨域解决方案"></a>跨域解决方案</h2><p>解决方案有jsonp、cors、postMessage、websocket、Node中间件代理(两次跨域)、nginx反向代理、window.name + iframe、location.hash + iframe、document.domain + iframe，CORS支持所有类型的HTTP请求，是跨域HTTP请求的根本解决方案，JSONP只支持GET请求，JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。不管是Node中间件代理还是nginx反向代理，主要是通过同源策略对服务器不加限制。<code>日常工作中，用得比较多的跨域方案是cors和nginx反向代理</code></p>
+<h2 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h2><ol>
+<li>jsonp 是 “JSON with padding” 的简写,是web服务器上流行的一种变体。jsonp看起来和json一样，只是会被包在一个函数的调用里。</li>
+<li>jsonp的原理<br>由于浏览器的同源策略限制，不允许跨域请求；但是页面中的 script、img、iframe标签是例外，不受同源策略限制。<br>Jsonp 就是利用 script标签跨域特性进行请求。<br>JSONP 的原理就是，先在全局注册一个回调函数，定义回调数据的处理；与服务端约定好一个同名回调函数名，服务端接收到请求后，将返回一段 Javascript，在这段 Javascript 代码中调用了约定好的回调函数，并且将数据作为参数进行传递。当网页接收到这段 Javascript 代码后，就会执行这个回调函数。<br>JSONP缺点：它只支持 GET请求，而不支持 POST请求等其他类型的HTTP请求。</li>
+</ol>
+<p><code>就是利用&lt;script&gt;标签没有跨域限制的“漏洞”（历史遗迹啊）来达到与第三方通讯的目的。当需要通讯时，本站脚本创建一个&lt;script&gt;元素，地址指向第三方的API网址，形如：     &lt;script src=&quot;http://www.example.net/api?param1=1&amp;param2=2&quot;&gt;&lt;/script&gt;     并提供一个回调函数来接收数据（函数名可约定，或通过地址参数传递）。     第三方产生的响应为json数据的包装（故称之为jsonp，即json padding），形如：     callback(&#123;&quot;name&quot;:&quot;hax&quot;,&quot;gender&quot;:&quot;Male&quot;&#125;)     这样浏览器会调用callback函数，并传递解析后json对象作为参数。本站脚本可在callback函数里处理所传入的数据。</code></p>
+<p>JSONP的例子：html代码，直接浏览器打开即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      receive <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;qwerty&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">callfun</span>(<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">&#x27;qwerty&#x27;</span>).innerHTML = data;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://127.0.0.1:10010/js?call=callfun&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>后端使用的egg.js，核心代码只有ctx.body那一句’use strict’;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Controller = <span class="built_in">require</span>(<span class="string">&#x27;egg&#x27;</span>).Controller;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JsonpController</span> <span class="keyword">extends</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="title">index</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; ctx &#125; = <span class="built_in">this</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(ctx.query);</span><br><span class="line">    ctx.set(<span class="string">&#x27;content-type&#x27;</span>, <span class="string">&#x27;text/javascript&#x27;</span>);</span><br><span class="line">    ctx.body = ctx.query.call + <span class="string">&#x27;(&quot;nihao&quot;)&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了让后端知道我们前端的回调函数的名字，我们在script的请求中加入了call=callfun参数，后端接收到ctx.query.call， 再和’(“nihao”)’合并，最后形成了字符串 callfun(“nihao”)这一句JS代码，传到前端。这个”nihao”就是我们从后端跨域传输到前端的数据了。callfun函数处理这个数据，显示到了屏幕中。</p>
+<ol start="3">
+<li>JSONP优缺点<br>JSONP优点是简单兼容性好，可用于解决主流浏览器的跨域数据访问的问题。缺点是仅支持get方法具有局限性, 不安全可能会遭受XSS攻击。</li>
+</ol>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ol>
+<li>JSON是一种通用的数据格式</li>
+<li>JSON语法支持3种类型的值：</li>
+</ol>
+<ul>
+<li>简单值：字符串、数值、布尔值、null。特殊值undefined不支持</li>
+<li>对象</li>
+<li>数组</li>
+</ul>
+<ol start="3">
+<li>JSON对象有两个方法：JSON.stringify()和JSON.parse()。</li>
+</ol>
+<ul>
+<li>JSON.stringify() 会输出不包含空格或缩进的JSON字符串，此外值为undefined的任何属性都会被跳过<br>JSON.stringify()还有两个参数，一个是过滤器，可以是数组或函数，第二个是用于缩进结果JSON字符串的选项</li>
+<li>如果给JSON.parse()传入的JSON字符串无效，则会导致报错<br>JSON.parse()也可以接收额外的一个参数，这个函数会针对每一个键值对都调用一次</li>
+</ul>
+<h2 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h2><p>CORS 需要浏览器和后端同时支持。IE8 和9 需要通过 XDomainRequest 来实现。<br>浏览器会自动进行 CORS 通信，实现 CORS 通信的关键是后端。只要后端实现了 CORS，就实现了跨域。<br>服务端设置 Access-Control-Allow-Origin 就可以开启 CORS。 该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。</p>
+<h2 id="nginx反向代理"><a href="#nginx反向代理" class="headerlink" title="nginx反向代理"></a>nginx反向代理</h2><p>实现原理类似于Node中间件代理，需要你搭建一个中转nginx服务器，用于转发请求。<br>使用nginx反向代理实现跨域，是最简单的跨域方式。只需要修改nginx的配置即可解决跨域问题，支持所有浏览器，支持session，不需要修改任何代码，并且不会影响服务器性能。<br>实现思路：通过nginx配置一个代理服务器（域名与domain1相同，端口不同）做跳板机，反向代理访问domain2接口，并且可以顺便修改cookie中domain信息，方便当前域cookie写入，实现跨域登录。</p>
+<h2 id="Node中间件代理-两次跨域"><a href="#Node中间件代理-两次跨域" class="headerlink" title="Node中间件代理(两次跨域)"></a>Node中间件代理(两次跨域)</h2><p>实现原理：同源策略是浏览器需要遵循的标准，而如果是服务器向服务器请求就无需遵循同源策略。 代理服务器，需要做以下几个步骤：</p>
+<ul>
+<li>接受客户端请求 。</li>
+<li>将请求 转发给服务器。</li>
+<li>拿到服务器 响应 数据。</li>
+<li>将 响应 转发给客户端。</li>
+</ul>
+<h2 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h2><p>postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一，它可用于解决以下方面的问题：</p>
+<ul>
+<li>页面和其打开的新窗口的数据传递</li>
+<li>多窗口之间消息传递</li>
+<li>页面与嵌套的iframe消息传递<br>上面三个场景的跨域数据传递<br>postMessage()方法允许来自不同源的脚本采用异步方式进行有限的通信，可以实现跨文本档、多窗口、跨域消息传递。</li>
+</ul>
+<h2 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h2><p>Websocket是HTML5的一个持久化的协议，它实现了浏览器与服务器的全双工通信，同时也是跨域的一种解决方案。WebSocket和HTTP都是应用层协议，都基于 TCP 协议。但是 WebSocket 是一种双向通信协议，在建立连接之后，WebSocket 的 server 与 client 都能主动向对方发送或接收数据。同时，WebSocket 在建立连接时需要借助 HTTP 协议，连接建立好了之后 client 与 server 之间的双向通信就与 HTTP 无关了。<br>原生WebSocket API使用起来不太方便，我们使用Socket.io，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容</p>
+<p>本地文件socket.html向localhost:3000发生数据和接受数据</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// socket.html</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">&#x27;ws://localhost:3000&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    socket.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      socket.send(<span class="string">&#x27;我爱你&#x27;</span>);<span class="comment">//向服务器发送数据</span></span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">    socket.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(e.data);<span class="comment">//接收服务器返回的数据</span></span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// server.js</span></span><br><span class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> app = express();</span><br><span class="line"><span class="keyword">let</span> WebSocket = <span class="built_in">require</span>(<span class="string">&#x27;ws&#x27;</span>);<span class="comment">//记得安装ws</span></span><br><span class="line"><span class="keyword">let</span> wss = <span class="keyword">new</span> WebSocket.Server(&#123;<span class="attr">port</span>:<span class="number">3000</span>&#125;);</span><br><span class="line">wss.on(<span class="string">&#x27;connection&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ws</span>) </span>&#123;</span><br><span class="line">  ws.on(<span class="string">&#x27;message&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    ws.send(<span class="string">&#x27;我不爱你&#x27;</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="window-name-iframe"><a href="#window-name-iframe" class="headerlink" title="window.name + iframe"></a>window.name + iframe</h2><p>window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。<br>总结：通过iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作</p>
+<h2 id="location-hash-iframe"><a href="#location-hash-iframe" class="headerlink" title="location.hash + iframe"></a>location.hash + iframe</h2><p>实现原理： a.html欲与c.html跨域相互通信，通过中间页b.html来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。<br>具体实现步骤：一开始a.html给c.html传一个hash值，然后c.html收到hash值后，再把hash值传递给b.html，最后b.html将结果放到a.html的hash值中。 同样的，a.html和b.html是同域的，都是<a href="http://localhost:3000;而c.html是http://localhost:4000">http://localhost:3000;而c.html是http://localhost:4000</a></p>
+<h2 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain + iframe"></a>document.domain + iframe</h2><p>该方式只能用于二级域名相同的情况下，比如a.test.com和b.test.com适用于该方式。 只需要给页面添加document.domain =’test.com’表示二级域名都相同就可以实现跨域。<br>实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。</p>
+<h2 id="有什么方法可以保持前后端实时通信"><a href="#有什么方法可以保持前后端实时通信" class="headerlink" title="有什么方法可以保持前后端实时通信"></a>有什么方法可以保持前后端实时通信</h2><p>实现保持前后端实时通信的方式有以下几种</p>
+<ol>
+<li>WebSocket： IE10以上才支持，Chrome16, FireFox11,Safari7以及Opera12以上完全支持，移动端形势大</li>
+<li>event-source: IE完全不支持（注意是任何版本都不支持），Edge76，Chrome6,Firefox6,Safari5和Opera以上支持， 移动端形势大好</li>
+<li>AJAX轮询： 用于兼容低版本的浏览器</li>
+<li>永久帧（ forever iframe）可用于兼容低版本的浏览器</li>
+<li>flash socket 可用于兼容低版本的浏览器</li>
+</ol>
+<p>这几种方式的优缺点:</p>
+<ol>
+<li>WebSocket<br>优点：WebSocket 是 HTML5 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议，可从HTTP升级而来，浏览器和服务器只需要一次握手，就可以进行持续的，双向的数据传输，因此能显著节约资源和带宽<br>缺点：1. 兼容性问题:不支持较低版本的IE浏览器（IE9及以下）2.不支持断线重连，需要手写心跳连接的逻辑 3.通信机制相对复杂</li>
+</ol>
+<p>心跳机制<br>1、心跳机制是每隔一段时间会向服务器发送一个数据包：<br>    告诉服务器（后台）自己还活着，同时客户端（浏览器）会确认服务器端是否还活着<br>2、如果还活着的话，就会回传一个数据包给客户端<br>3、服务端断开连接了。客户端需要重连~</p>
+<ol start="2">
+<li><p>server-sent-event（event-source）<br>优点：（1）只需一次请求，便可以stream的方式多次传送数据，节约资源和带宽 （2）相对WebSocket来说简单易用 （3）内置断线重连功能(retry)<br>缺点： （1）是单向的，只支持服务端-&gt;客户端的数据传送，客户端到服务端的通信仍然依靠AJAX，没有”一家人整整齐齐“的感觉（2）兼容性令人担忧，IE浏览器完全不支持</p>
+</li>
+<li><p>AJAX轮询<br>优点：兼容性良好，对标低版本IE<br>缺点：请求中有大半是无用的请求，浪费资源</p>
+</li>
+<li><p>Flash Socket<br>缺点：（1）浏览器开启时flash需要用户确认，（2）加载时间长，用户体验较差 （3）大多数移动端浏览器不支持flash，为重灾区<br>优点： 兼容低版本浏览器</p>
+</li>
+<li><p>永久帧（ forever iframe）<br>缺点： iframe会产生进度条一直存在的问题，用户体验差<br>优点：兼容低版本IE浏览器</p>
+</li>
+</ol>
+<p>综上，综合兼容性和用户体验的问题，在项目中选用了WebSocket -&gt;server-sent-event -&gt; AJAX轮询这三种方式做从上到下的兼容</p>
+<h2 id="常见http-status"><a href="#常见http-status" class="headerlink" title="常见http status"></a>常见http status</h2><p>1XX系列：指定客户端应相应的某些动作，代表请求已被接受，需要继续处理。由于 HTTP/1.0 协议中没有定义任何 1xx 状态码，所以除非在某些试验条件下，服务器禁止向此类客户端发送 1xx 响应。</p>
+<p>2XX系列：代表请求已成功被服务器接收、理解、并接受。这系列中最常见的有200、201状态码。</p>
+<p>3XX系列：代表需要客户端采取进一步的操作才能完成请求，这些状态码用来重定向，后续的请求地址（重定向目标）在本次响应的 Location 域中指明。这系列中最常见的有301、302状态码。</p>
+<p>4XX系列：表示请求错误。代表了客户端看起来可能发生了错误，妨碍了服务器的处理。常见有：401、404状态码。</p>
+<p>5xx系列：代表了服务器在处理请求的过程中有错误或者异常状态发生，也有可能是服务器意识到以当前的软硬件资源无法完成对请求的处理。常见有500、503状态码。</p>
+<h2 id="http和https"><a href="#http和https" class="headerlink" title="http和https"></a>http和https</h2><h3 id="HTTP和HTTPS的基本概念"><a href="#HTTP和HTTPS的基本概念" class="headerlink" title="HTTP和HTTPS的基本概念"></a>HTTP和HTTPS的基本概念</h3><p>HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
+<p>HTTPS：是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+<p>HTTPS协议的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性</p>
+<h3 id="HTTP与HTTPS有什么区别？"><a href="#HTTP与HTTPS有什么区别？" class="headerlink" title="HTTP与HTTPS有什么区别？"></a>HTTP与HTTPS有什么区别？</h3><p>HTTP协议传输的数据都是未加密的，也就是明文的，因此使用HTTP协议传输隐私信息非常不安全，为了保证 这些隐私数据能加密传输，于是网景公司设计了SSL（Secure Sockets Layer）协议用于对HTTP协议传输的数据进行加密，从而就诞生了HTTPS。简单来说，HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全。</p>
+<p>HTTPS和HTTP的区别主要如下：</p>
+<ol>
+<li>https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。</li>
+<li>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</li>
+<li>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</li>
+<li>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</li>
+</ol>
+<h2 id="http1-x-和http2-x区别"><a href="#http1-x-和http2-x区别" class="headerlink" title="http1.x 和http2.x区别"></a>http1.x 和http2.x区别</h2><p>http1.x 和http2.x主要有以下4个区别：</p>
+<ol>
+<li>HTTP2使用的是二进制传送，HTTP1.X是文本（字符串）传送。<br>二进制传送的单位是帧和流。帧组成了流，同时流还有流ID标示</li>
+<li>HTTP2支持多路复用<br>因为有流ID，所以通过同一个http请求实现多个http请求传输变成了可能，可以通过流ID来标示究竟是哪个流从而定位到是哪个http请求</li>
+<li>HTTP2头部压缩<br>HTTP2通过gzip和compress压缩头部然后再发送，同时客户端和服务器端同时维护一张头信息表，所有字段都记录在这张表中，这样后面每次传输只需要传输表里面的索引Id就行，通过索引ID查询表头的值</li>
+<li>HTTP2支持服务器推送<br>HTTP2支持在未经客户端许可的情况下，主动向客户端推送内容</li>
+</ol>
+<h2 id="http请求方式"><a href="#http请求方式" class="headerlink" title="http请求方式"></a>http请求方式</h2><p>http请求方式有以下8种，其中get和post是最常用的：</p>
+<ol>
+<li>OPTIONS<br>返回服务器针对特定资源所支持的HTTP请求方法，也可以利用向web服务器发送‘*’的请求来测试服务器的功能性</li>
+<li>HEAD<br>向服务器索与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以再不必传输整个响应内容的情况下，就可以获取包含在响应小消息头中的元信息。</li>
+<li>GET<br>向特定的资源发出请求。注意：GET方法不应当被用于产生“副作用”的操作中，例如在Web Application中，其中一个原因是GET可能会被网络蜘蛛等随意访问。Loadrunner中对应get请求函数：web_link和web_url</li>
+<li>POST<br>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。 Loadrunner中对应POST请求函数：web_submit_data,web_submit_form</li>
+<li>PUT<br>向指定资源位置上传其最新内容  (数据发送到服务器以创建或更新资源，侧重于创建数据，对应insert操作)</li>
+<li>DELETE<br>请求服务器删除Request-URL所标识的资源</li>
+<li>TRACE<br>回显服务器收到的请求，主要用于测试或诊断</li>
+<li>CONNECT<br>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</li>
+</ol>
+<h2 id="GET和POST区别"><a href="#GET和POST区别" class="headerlink" title="GET和POST区别"></a>GET和POST区别</h2><ol>
+<li>get用来获取数据，post用来提交数据</li>
+<li>get参数有长度限制（受限于url长度，具体的数值取决于浏览器和服务器的限制，最长2048字节），而post无限制</li>
+<li>get请求的数据会附加在url之 ，以 “ ？ “分割url和传输数据，多个参数用 “&amp;”连接，而post请求会把请求的数据放在http请求体中。</li>
+<li>get是明文传输，post是放在请求体中，但是开发者可以通过抓包工具看到，也相当于是明文的。</li>
+<li>get请求会保存在浏览器历史记录中，还可能保存在web服务器的日志中</li>
+</ol>
+<h2 id="http-缓存策略"><a href="#http-缓存策略" class="headerlink" title="http 缓存策略"></a>http 缓存策略</h2><p>浏览器每次发起请求时，先在本地缓存中查找结果以及缓存标识，根据缓存标识来判断是否使用本地缓存。如果缓存有效，则使用本地缓存；否则，则向服务器发起请求并携带缓存标识。根据是否需向服务器发起HTTP请求，将缓存过程划分为两个部分：<br><code>强制缓存和协商缓存，强缓优先于协商缓存</code>。</p>
+<ul>
+<li>强缓存，服务器通知浏览器一个缓存时间，在缓存时间内，下次请求，直接用缓存，不在时间内，执行比较缓存策略。</li>
+<li>协商缓存，让客户端与服务器之间能实现缓存文件是否更新的验证、提升缓存的复用率，将缓存信息中的Etag和 Last-Modified 通过请求发送给服务器，由服务器校验，返回304状态码时，浏览器直接使用缓存。</li>
+</ul>
+<p>HTTP缓存都是从第二次请求开始的：<br>第一次请求资源时，服务器返回资源，并在response header中回传资源的缓存策略；<br>第二次请求时，浏览器判断这些请求参数，击中强缓存就直接200，否则就把请求参数加到request header头中传给服务器，看是否击中协商缓存，击中则返回304，否则服务器会返回新的资源。</p>
+<h2 id="介绍下-HTTPS-中间人攻击"><a href="#介绍下-HTTPS-中间人攻击" class="headerlink" title="介绍下 HTTPS 中间人攻击"></a>介绍下 HTTPS 中间人攻击</h2><p>https 协议由 http + ssl 协议构成。</p>
+<ol>
+<li><p>中间人攻击过程如下：<br>服务器向客户端发送公钥；<br>攻击者截获公钥，保留在自己手上；<br>然后攻击者自己生成一个【伪造的】公钥，发给客户端；<br>客户端收到伪造的公钥后，生成加密 hash（秘钥） 值发给服务器；<br>攻击者获得加密 hash 值，用自己的私钥解密获得真秘钥；<br>同时生成假的加密 hash 值，发给服务器；<br>服务器用私钥解密获得假秘钥；<br>服务器用假秘钥加密传输信息；</p>
+</li>
+<li><p>防范方法：<br>服务器在发送浏览器的公钥中加入 CA 证书，浏览器可以验证 CA 证书的有效性；（现有 HTTPS 很难被劫持，除非信任了劫持者的 CA 证书）。</p>
+</li>
+</ol>
+<h2 id="tcp-是如何确保有效传输的，拥塞控制"><a href="#tcp-是如何确保有效传输的，拥塞控制" class="headerlink" title="tcp 是如何确保有效传输的，拥塞控制"></a>tcp 是如何确保有效传输的，拥塞控制</h2><ol>
+<li><p>通过以下7种方式确保有效传输<br>校验和<br>序列号<br>确认应答<br>超时重传<br>连接管理<br>流量控制<br>拥塞控制</p>
+</li>
+<li><p>拥塞控制<br>TCP不仅可以可以控制端到端的数据传输，还可以对网络上的传输进行监控。这使得TCP非常强大智能，它会根据网络情况来调整自己的收发速度。网络顺畅时就可以发的快，拥塞时就发的相对慢一些。拥塞控制算法主要有四种：慢启动，拥塞避免，快速重传，快速恢复。</p>
+</li>
+</ol>
+<h2 id="tcp-ip协议栈、网络模型"><a href="#tcp-ip协议栈、网络模型" class="headerlink" title="tcp/ip协议栈、网络模型"></a>tcp/ip协议栈、网络模型</h2><p>TCP/IP 协议栈是一系列网络协议的总和，是构成网络通信的核心骨架，它定义了电子设备如何连入因特网，以及数据如何在它们之间进行传输。TCP/IP 协议采用4层结构，分别是应用层、传输层、网络层和链路层，</p>
+<p>链路层：对0和1进行分组，定义数据帧，确认主机的物理地址，传输数据；<br>网络层：定义IP地址，确认主机所在的网络位置，并通过IP进行MAC寻址，对外网数据包进行路由转发；<br>传输层：定义端口，确认主机上应用程序的身份，并将数据包交给对应的应用程序；<br>应用层：定义数据格式，并按照对应的格式解读数据。</p>
+<h2 id="OSI七层协议"><a href="#OSI七层协议" class="headerlink" title="OSI七层协议"></a>OSI七层协议</h2><h2 id="创建ajax过程"><a href="#创建ajax过程" class="headerlink" title="创建ajax过程"></a>创建ajax过程</h2><p>创建XMLHttpRequest对象,也就是创建一个异步调用对象<br>创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息<br>设置响应HTTP请求状态变化的函数<br>发送HTTP请求<br>获取异步调用返回的数据<br>使用JavaScript和DOM实现局部刷新</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlHttpRequest;  <span class="comment">//定义一个变量用于存放XMLHttpRequest对象</span></span><br><span class="line"> <span class="comment">//定义一个用于创建XMLHttpRequest对象的函数</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">createXMLHttpRequest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(<span class="built_in">window</span>.ActiveXObject)&#123;<span class="comment">//IE浏览器的创建方式</span></span><br><span class="line">     xmlHttpRequest = <span class="keyword">new</span> ActiveXObject(<span class="string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="line">   &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123; <span class="comment">//Netscape浏览器中的创建方式</span></span><br><span class="line">     xmlHttpRequest = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">//响应HTTP请求状态变化的函数</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">httpStateChange</span>(<span class="params"></span>)</span>&#123;<span class="comment">//判断异步调用是否完成</span></span><br><span class="line">   <span class="keyword">if</span>(xmlHttpRequest.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">     <span class="comment">//判断异步调用是否成功,如果成功开始局部更新数据</span></span><br><span class="line">     <span class="keyword">if</span>(xmlHttpRequest.status == <span class="number">200</span>||xmlHttpRequest.status == <span class="number">0</span>)&#123;<span class="comment">//查找节点</span></span><br><span class="line">       <span class="keyword">var</span> node = <span class="built_in">document</span>.getElementById(<span class="string">&quot;myDIv&quot;</span>);<span class="comment">//更新数据</span></span><br><span class="line">       node.firstChild.value = xmlHttpRequest .responseText;</span><br><span class="line">     &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">     <span class="comment">//如果异步调用未成功,弹出警告框,并显示出错信息</span></span><br><span class="line">       alert(<span class="string">&quot;异步调用出错/n返回的HTTP状态码为:&quot;</span>+xmlHttpRequest.status + <span class="string">&quot;/n返回的HTTP状态信息为:&quot;</span> + xmlHttpRequest.statusText);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//异步调用服务器段数据</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params">name,value</span>)</span>&#123;<span class="comment">//创建XMLHttpRequest对象</span></span><br><span class="line">   createXMLHttpRequest();</span><br><span class="line">   <span class="keyword">if</span>(xmlHttpRequest!=<span class="literal">null</span>)&#123;</span><br><span class="line">     <span class="comment">//创建HTTP请求</span></span><br><span class="line">     xmlHttpRequest.open(<span class="string">&quot;get&quot;</span>,<span class="string">&quot;ajax.text&quot;</span>,<span class="literal">true</span>)</span><br><span class="line">     <span class="comment">//设置HTTP请求状态变化的函数</span></span><br><span class="line">     xmlHttpRequest.onreadystatechange = httpStateChange;</span><br><span class="line">     <span class="comment">//发送请求</span></span><br><span class="line">     xmlHttpRequest.send(<span class="literal">null</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="axios的拦截器原理及应用"><a href="#axios的拦截器原理及应用" class="headerlink" title="axios的拦截器原理及应用"></a>axios的拦截器原理及应用</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>请求拦截器用于在接口请求之前做的处理，比如为每个请求带上相应的参数（token，时间戳等）。<br>返回拦截器用于在接口返回之后做的处理，比如对返回的状态进行判断（token是否过期）。</p>
+<h3 id="拦截器的使用"><a href="#拦截器的使用" class="headerlink" title="拦截器的使用"></a>拦截器的使用</h3><ol>
+<li>在src目录下建立api文件夹</li>
+<li>文件夹内建立axios.js文件，进行接口请求的初始化配置<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"><span class="keyword">let</span> instance = axios.create(&#123;</span><br><span class="line">    <span class="attr">baseURL</span>: <span class="string">&quot;http://localhost:3000/&quot;</span>,</span><br><span class="line">    <span class="attr">headers</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;content-type&#x27;</span>: <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//请求拦截器</span></span><br><span class="line">instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123; <span class="comment">//拦截请求，做统一处理</span></span><br><span class="line">    <span class="keyword">const</span> token = <span class="string">&quot;asdasdk&quot;</span></span><br><span class="line">    <span class="comment">//在每个http header都加上token</span></span><br><span class="line">    config.headers.authorization = token</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">&#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123;<span class="comment">//失败</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//响应拦截器</span></span><br><span class="line">instance.interceptors.response.use(<span class="function"><span class="params">response</span> =&gt;</span> &#123; <span class="comment">//拦截响应，做统一处理</span></span><br><span class="line">    <span class="keyword">if</span> (response.data.code) &#123;</span><br><span class="line">        <span class="keyword">switch</span> (response.data.code) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">200</span>:</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">&quot;1111&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line">&#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123; <span class="comment">//无响应时的处理</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err.response.status)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> instance</span><br></pre></td></tr></table></figure></li>
+<li>在main.js中引入，并将其绑定到Vue原型上，设为全局，不用在每个页面重新引入<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> instance <span class="keyword">from</span> <span class="string">&#x27;./api/axios&#x27;</span></span><br><span class="line">Vue.prototype.$http = instance</span><br></pre></td></tr></table></figure></li>
+<li>页面使用<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$http.get(url).then(<span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">console</span>.log(r)).catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br><span class="line"><span class="built_in">this</span>.$http.post(url, params).then(<span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">console</span>.log(r)).catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
+<h2 id="xhr-的-readyState"><a href="#xhr-的-readyState" class="headerlink" title="xhr 的 readyState"></a>xhr 的 readyState</h2>readyState是XMLHttpRequest对象的一个属性，用来标识当前XMLHttpRequest对象处于什么状态。<br>readyState总共有5个状态值，分别为0~4，每个值代表了不同的含义</li>
+</ol>
+<p>0：初始化，XMLHttpRequest对象还没有完成初始化</p>
+<p>1：载入，XMLHttpRequest对象开始发送请求</p>
+<p>2：载入完成，XMLHttpRequest对象的请求发送完成</p>
+<p>3：解析，XMLHttpRequest对象开始读取服务器的响应</p>
+<p>4：完成，XMLHttpRequest对象读取服务器响应结束</p>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p><code>CDN</code>的全称是Content Delivery Network，即<code>内容分发网络</code>。其目的是<code>通过在现有的internet中增加一层新的网络架构，将网站的内容发布到最接近用户的网络边缘，使用户可以就近取得所需的内容，提高用户访问网站的响应速度</code>。CDN有别于镜像，因为它比镜像更智能，或者可以做这样一个比喻：CDN=更智能的镜像+缓存+流量导流。因而，CDN可以明显提高Internet网络中信息流动的效率。从技术上全面解决由于网络带宽小、用户访问量大、网点分布不均等问题，<code>提高用户访问网站的响应速度</code>。</p>
+<h2 id="cdn加速原理"><a href="#cdn加速原理" class="headerlink" title="cdn加速原理"></a>cdn加速原理</h2><h2 id="SSL-连接断开后如何恢复？"><a href="#SSL-连接断开后如何恢复？" class="headerlink" title="SSL 连接断开后如何恢复？"></a>SSL 连接断开后如何恢复？</h2><h2 id="hosts-文件是什么"><a href="#hosts-文件是什么" class="headerlink" title="hosts 文件是什么"></a>hosts 文件是什么</h2><p>hosts 文件是个没有扩展名的系统文件，其作用就是<code>将网址域名和其对应的 IP 地址建立一个关联“数据库”</code>，当用户在浏览器中输入一个 url 时，系统会首先自动从 hosts 文件中寻找对应的 IP 地址。</p>
+<h2 id="什么是粘包问题，如何解决？"><a href="#什么是粘包问题，如何解决？" class="headerlink" title="什么是粘包问题，如何解决？"></a>什么是粘包问题，如何解决？</h2><p>默认情况下，TCP 连接会采用延迟传送算法（Nagle 算法），在数据发送之前缓存他们。如果短时间有多个数据发送，会缓冲到一起作一次发送（缓冲大小是socket.bufferSize），这样可以减少 IO 消耗提高性能。（TCP 会出现这个问题，HTTP 协议解决了这个问题）</p>
+<p>解决方法:<br>多次发送之前间隔一个等待时间：处理简单，但是影响传输效率；<br>关闭 Nagle 算法：消耗资源高，整体性能下降；<br>封包/拆包：使用一些有标识来进行封包拆包（类似 HTTP 协议头尾）；</p>
+
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2022/08/16/6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2022/08/16/6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93/";
+            const title         = "「6.浏览器」";
+            const excerpt       = `浏览器在浏览器中输入url并回车会发生什么？1.浏览器拿到url后解析url，获取到域名2.通过域名解析服务器进行域名解析,获取到域名对应的ip地址3.接下来就是对该ip地址对应的服务器发起tcp连接4.通过三次握手，建立客户端和服务...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a>
+                </div>
+                <div class="pull-date">
+                <span>最后编辑：2022-09-12</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 5.打包" href="/2022/08/14/5.打包/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 7.性能优化与安全" href="/2022/08/25/7.性能优化与安全/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">念念不忘，必有回响</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-text">浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5url%E5%B9%B6%E5%9B%9E%E8%BD%A6%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">在浏览器中输入url并回车会发生什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%9A%84%EF%BC%9F"><span class="toc-text">浏览器如何渲染页面的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-sessionStorage-localStorage-%E5%8C%BA%E5%88%AB"><span class="toc-text">cookie sessionStorage localStorage 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-session"><span class="toc-text">cookie session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E4%B8%8EsessionStorage"><span class="toc-text">session与sessionStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%B8%AA%E4%BC%9A%E8%BF%87%E6%9C%9F%E7%9A%84localStorage%EF%BC%8C%E8%AF%B4%E8%AF%B4%E6%83%B3%E6%B3%95"><span class="toc-text">如何写一个会过期的localStorage，说说想法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4localstorage%E6%95%B0%E6%8D%AE"><span class="toc-text">如何定时删除localstorage数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage-%E8%83%BD%E8%B7%A8%E5%9F%9F%E5%90%97"><span class="toc-text">localStorage 能跨域吗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localstorage%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-text">localstorage的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BB%98%E3%80%81%E9%87%8D%E6%8E%92%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D"><span class="toc-text">重绘、重排区别如何避免</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AFEvent-loop"><span class="toc-text">事件循环Event loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">浏览器垃圾回收机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-text">网络传输</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%EF%BC%9F"><span class="toc-text">跨域是什么？如何解决跨域？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">跨域解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsonp"><span class="toc-text">jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cors"><span class="toc-text">cors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-text">nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%BB%A3%E7%90%86-%E4%B8%A4%E6%AC%A1%E8%B7%A8%E5%9F%9F"><span class="toc-text">Node中间件代理(两次跨域)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postMessage"><span class="toc-text">postMessage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket"><span class="toc-text">websocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#window-name-iframe"><span class="toc-text">window.name + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location-hash-iframe"><span class="toc-text">location.hash + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-domain-iframe"><span class="toc-text">document.domain + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E4%BF%9D%E6%8C%81%E5%89%8D%E5%90%8E%E7%AB%AF%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1"><span class="toc-text">有什么方法可以保持前后端实时通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81http-status"><span class="toc-text">常见http status</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%92%8Chttps"><span class="toc-text">http和https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%92%8CHTTPS%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">HTTP和HTTPS的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E4%B8%8EHTTPS%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">HTTP与HTTPS有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http1-x-%E5%92%8Chttp2-x%E5%8C%BA%E5%88%AB"><span class="toc-text">http1.x 和http2.x区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="toc-text">http请求方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET%E5%92%8CPOST%E5%8C%BA%E5%88%AB"><span class="toc-text">GET和POST区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="toc-text">http 缓存策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8B-HTTPS-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-text">介绍下 HTTPS 中间人攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-%E6%98%AF%E5%A6%82%E4%BD%95%E7%A1%AE%E4%BF%9D%E6%9C%89%E6%95%88%E4%BC%A0%E8%BE%93%E7%9A%84%EF%BC%8C%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-text">tcp 是如何确保有效传输的，拥塞控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-ip%E5%8D%8F%E8%AE%AE%E6%A0%88%E3%80%81%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-text">tcp&#x2F;ip协议栈、网络模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-text">OSI七层协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAajax%E8%BF%87%E7%A8%8B"><span class="toc-text">创建ajax过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios%E7%9A%84%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8"><span class="toc-text">axios的拦截器原理及应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">拦截器的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xhr-%E7%9A%84-readyState"><span class="toc-text">xhr 的 readyState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN"><span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cdn%E5%8A%A0%E9%80%9F%E5%8E%9F%E7%90%86"><span class="toc-text">cdn加速原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSL-%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%EF%BC%9F"><span class="toc-text">SSL 连接断开后如何恢复？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hosts-%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">hosts 文件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-text">什么是粘包问题，如何解决？</span></a></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E5%AE%89%E5%85%A8/">性能优化与安全</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%93%E5%8C%85/">打包</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99/">正则</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/">零散知识</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/HTTP/" style="font-size: 0.6em;">HTTP</a> <a href="/tags/Vue/" style="font-size: 0.73em;">Vue</a> <a href="/tags/css/" style="font-size: 0.6em;">css</a> <a href="/tags/egg/" style="font-size: 0.6em;">egg</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 0.6em;">flex弹性布局</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/js/" style="font-size: 0.6em;">js</a> <a href="/tags/koa/" style="font-size: 0.6em;">koa</a> <a href="/tags/node/" style="font-size: 0.6em;">node</a> <a href="/tags/npm/" style="font-size: 0.6em;">npm</a> <a href="/tags/react/" style="font-size: 0.6em;">react</a> <a href="/tags/vue/" style="font-size: 0.8em;">vue</a> <a href="/tags/wamp/" style="font-size: 0.6em;">wamp</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.67em;">前端</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 0.6em;">开发工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 0.67em;">微信小程序</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E5%AE%89%E5%85%A8/" style="font-size: 0.6em;">性能优化与安全</a> <a href="/tags/%E6%89%93%E5%8C%85/" style="font-size: 0.6em;">打包</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/31/8.%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"><i class="fa  fa-book"></i> 8.开发工具</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/25/7.%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E5%AE%89%E5%85%A8/"><i class="fa  fa-book"></i> 7.性能优化与安全</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/16/6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93/"><i class="fa  fa-book"></i> 6.浏览器</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/14/5.%E6%89%93%E5%8C%85/"><i class="fa  fa-book"></i> 5.打包</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/14/3.%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/"><i class="fa  fa-book"></i> 3.微信小程序合集</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 橘知·部落 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by zengqm.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="3204190542"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

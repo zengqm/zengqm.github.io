@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>3.微信小程序合集 | 橘知·部落</title>
+  <meta name="author" content="zengqm" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="微信小程序" />
+  
+  <meta name="description" content="微信小程序是单页应用吗?是，通过路由进行页面切换 小程序的开发，发送一个请求，怎么请求数据的 在微信小程序进行网络通信，只能和指定的域名进行通信服务器域名在：小程序后台&#x3D;&gt; 开发&#x3D;&gt; 开发设置 &#x3D;&gt; 服务器域名中配置，配置时需注意：1）域名只支持https（request, uploadFile，downloadFile）和wss（connectSocket）协议。2）域名不能使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.微信小程序合集">
+<meta property="og:url" content="http://example.com/2022/08/14/3.%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/index.html">
+<meta property="og:site_name" content="橘知·部落">
+<meta property="og:description" content="微信小程序是单页应用吗?是，通过路由进行页面切换 小程序的开发，发送一个请求，怎么请求数据的 在微信小程序进行网络通信，只能和指定的域名进行通信服务器域名在：小程序后台&#x3D;&gt; 开发&#x3D;&gt; 开发设置 &#x3D;&gt; 服务器域名中配置，配置时需注意：1）域名只支持https（request, uploadFile，downloadFile）和wss（connectSocket）协议。2）域名不能使">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2022-08-14T15:09:23.971Z">
+<meta property="article:modified_time" content="2022-10-20T13:05:19.267Z">
+<meta property="article:author" content="zengqm">
+<meta property="article:tag" content="微信小程序">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">橘知·部落</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>橘知·部落</h2> <br />
+                        <span>活在自己的热爱里</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article>
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center">3.微信小程序合集</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><i class="fa fa-calendar"></i> 2022-08-14</li>
+                <li><i class="fa fa-user"></i> 作者 zengqm</li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~4.76K
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                本文最后编辑于 <time datetime="1666271119267"></time> 前，其中的内容可能需要更新。
+            </div>
+            
+                <div class="kratos-post-inner-toc">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%98%AF%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8%E5%90%97"><span class="toc-number">1.</span> <span class="toc-text">微信小程序是单页应用吗?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%80%E5%8F%91%EF%BC%8C%E5%8F%91%E9%80%81%E4%B8%80%E4%B8%AA%E8%AF%B7%E6%B1%82%EF%BC%8C%E6%80%8E%E4%B9%88%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">小程序的开发，发送一个请求，怎么请求数据的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%95%B0%E6%8D%AE%E6%80%8E%E4%B9%88%E5%90%8C%E6%AD%A5%E6%B8%B2%E6%9F%93"><span class="toc-number">3.</span> <span class="toc-text">小程序中数据怎么同步渲染</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BA%94%E7%94%A8%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">4.</span> <span class="toc-text">微信小程序应用的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">5.</span> <span class="toc-text">微信小程序页面的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">6.</span> <span class="toc-text">微信小程序组件的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8Frpx%E5%8D%95%E4%BD%8D"><span class="toc-number">7.</span> <span class="toc-text">小程序rpx单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8Evue%E5%8C%BA%E5%88%AB"><span class="toc-number">8.</span> <span class="toc-text">微信小程序与vue区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%8B%E4%B8%89%E7%A7%8D%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">小程序简单介绍下三种事件对象的属性列表？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%82%E6%95%B0%E4%BC%A0%E5%80%BC%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text">小程序有哪些参数传值的方法?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BC%98%E5%8A%A3%E5%8A%BF%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">微信小程序的优劣势？</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <h2 id="微信小程序是单页应用吗"><a href="#微信小程序是单页应用吗" class="headerlink" title="微信小程序是单页应用吗?"></a>微信小程序是单页应用吗?</h2><p>是，通过路由进行页面切换</p>
+<h2 id="小程序的开发，发送一个请求，怎么请求数据的"><a href="#小程序的开发，发送一个请求，怎么请求数据的" class="headerlink" title="小程序的开发，发送一个请求，怎么请求数据的"></a>小程序的开发，发送一个请求，怎么请求数据的</h2><ol>
+<li><p>在微信小程序进行网络通信，只能和指定的域名进行通信<br>服务器域名在：小程序后台=&gt; 开发=&gt; 开发设置 =&gt; 服务器域名中配置，配置时需注意：<br>1）域名只支持https（request, uploadFile，downloadFile）和wss（connectSocket）协议。<br>2）域名不能使用ip地址或localhost。<br>3）域名必须经过ICP备案。<br>4）服务器域名一个月内可申请5次修改。</p>
+</li>
+<li><p>微信小程序包括四种类型的网络请求</p>
+</li>
+</ol>
+<ol>
+<li>普通HTTPS请求(wx.request)</li>
+<li>上传文件(wx.uploadFile)</li>
+<li>下载文件(wx.downloadFile)</li>
+<li>WebSocket通信(wx.connectSocket)</li>
+</ol>
+<ol start="3">
+<li>小程序没有跨域的限制<br>小程序中的代码并不运行在浏览器中，因此小程序开发中，不存在数据的跨域请求限制问题。</li>
+</ol>
+<h2 id="小程序中数据怎么同步渲染"><a href="#小程序中数据怎么同步渲染" class="headerlink" title="小程序中数据怎么同步渲染"></a>小程序中数据怎么同步渲染</h2><p>通过setData方法</p>
+<p>setData工作原理：<br>小程序分为逻辑层和渲染层，而我们每次逻辑层改变了，要借由 Native 进行。小程序的渲染层和逻辑层由两个线程管理：渲染层的界面使用了 WebView 进行渲染；逻辑层采用 JsCore 线程运行 JS 脚本。一个小程序存在多个界面，所以渲染层存在多个 WebView 线程，这两个线程的通信会经由微信客户端 Native 做中转，逻辑层发送网络请求也经由 Native 转发</p>
+<p>所以我们不要重复 setdata ，以及减少数据的传输量。我们的数据传输实际是一次 Javascript 脚本过程，当数据量过大时会增加脚本的编译执行时间，占用 WebView JS 线程。去除不必要的事件绑定（ WXML 中的 bind 和 catch ），从而减少通信的数据量和次数。</p>
+<h2 id="微信小程序应用的生命周期"><a href="#微信小程序应用的生命周期" class="headerlink" title="微信小程序应用的生命周期"></a>微信小程序应用的生命周期</h2><p>onLaunch    小程序初始化完成时触发，全局只触发一次<br>onShow    小程序启动，或从后台进入前台显示时触发<br>onHide    小程序从前台进入后台时触发<br>onError    小程序发生脚本错误或 API 调用报错时触发<br>onPageNotFound    小程序要打开的页面不存在时触发<br>onUnhandledRejection()    小程序有未处理的 Promise 拒绝时触发<br>onThemeChange    系统切换主题时触发</p>
+<h2 id="微信小程序页面的生命周期"><a href="#微信小程序页面的生命周期" class="headerlink" title="微信小程序页面的生命周期"></a>微信小程序页面的生命周期</h2><p>生命周期              说明                              作用<br>onLoad   | 生命周期回调—监听页面加载           |    发送请求获取数据<br>onShow   | 生命周期回调—监听页面显示           |    请求数据<br>onReady  | 生命周期回调—监听页面初次渲染完成   |    获取页面元素（少用）<br>onHide   | 生命周期回调—监听页面隐藏           |    终止任务，如定时器或者播放音乐<br>onUnload | 生命周期回调—监听页面卸载           |    终止任务</p>
+<h2 id="微信小程序组件的生命周期"><a href="#微信小程序组件的生命周期" class="headerlink" title="微信小程序组件的生命周期"></a>微信小程序组件的生命周期</h2><ul>
+<li>组件实例刚刚被创建好时， created 生命周期被触发。此时，组件数据 this.data 就是在 Component 构造器中定义的数据 data 。 此时还不能调用 setData 。 通常情况下，这个生命周期只应该用于给组件 this 添加一些自定义属性字段。</li>
+<li>在组件完全初始化完毕、进入页面节点树后， attached 生命周期被触发。此时， this.data 已被初始化为组件的当前值。这个生命周期很有用，绝大多数初始化工作可以在这个时机进行。</li>
+<li>在组件离开页面节点树后， detached 生命周期被触发。退出一个页面时，如果组件还在页面节点树中，则 detached 会被触发。</li>
+</ul>
+<ol>
+<li>created 在组件实例刚刚被创建时执行</li>
+<li>attached 在组件实例进入页面节点树时执行</li>
+<li>ready 在组件在视图层布局完成后执行</li>
+<li>moved 在组件实例被移动到节点树另一个位置时执行</li>
+<li>detached 在组件实例被从页面节点树移除时执行</li>
+<li>error 每当组件方法抛出错误时执行<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 组件的生命周期： 新旧写法同时存在的时候，以新写法为准，旧写法不会生效</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="comment">// 新写法（同时存在以新方式为准，旧的不生效）</span></span><br><span class="line"><span class="attr">lifetimes</span>: &#123;</span><br><span class="line">    <span class="function"><span class="title">created</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">attached</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 旧写法 -- 与data平齐，不包裹在lifetimes中（同时存在以新方式为准，旧的不生效）</span></span><br><span class="line">    <span class="function"><span class="title">created</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">attached</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>“组件所在页面的生命周期”，在 pageLifetimes 定义段中定义。其中可用的生命周期包括：</p>
+<ol>
+<li>show 组件所在的页面被展示时执行</li>
+<li>hide 组件所在的页面被隐藏时执行</li>
+<li>resize 组件所在的页面尺寸变化时执行<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line">  <span class="attr">pageLifetimes</span>: &#123;</span><br><span class="line">    <span class="attr">show</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 页面被展示</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">hide</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 页面被隐藏</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">resize</span>: <span class="function"><span class="keyword">function</span>(<span class="params">size</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 页面尺寸变化</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="小程序rpx单位"><a href="#小程序rpx单位" class="headerlink" title="小程序rpx单位"></a>小程序rpx单位</h2><ol>
+<li>rpx是微信小程序独有的、解决屏幕自适应的尺寸单位</li>
+<li>可以根据屏幕宽度进行自适应，不论大小屏幕，规定屏幕宽为750rpx</li>
+<li>通过 rpx 设置元素和字体的大小，小程序在不同尺寸的屏幕下，可以实现自动适配<br>1 rpx = 0.5 px = 1 物理像素</li>
+</ol>
+<h2 id="微信小程序与vue区别"><a href="#微信小程序与vue区别" class="headerlink" title="微信小程序与vue区别"></a>微信小程序与vue区别</h2><ol>
+<li>生命周期不一样，微信小程序生命周期比较简单</li>
+<li>数据绑定也不同，微信小程序数据绑定需要使用"{{}}"vue直接 v-bind: 就可以 
+3. 显示与隐藏元素:
+vue中，使用v-if和v-show控制元素的显示和隐藏
+小程序中，使用wx-if和hidden控制元素的显示和隐藏
+4. 事件处理不同:
+小程序中，全用bindtap(bind+event)，或者catchtap(catch+event)绑定事件
+vue，使用v-on:event绑定事件，或者使用@event绑定事件
+5. 数据双向绑定也不也不一样在:
+vue中,只需要再表单元素上加上v-model,然后再绑定data中对应的一个值，当表单元素内容发生变化时，data中对应的值也会相应改变
+微信小程序必须获取到表单元素，改变的值，然后再把值赋给一个data中声明的变量
+
+## 简述微信小程序原理
+1. 微信小程序采用JavaScript、WXML、WXSS三种技术进行开发,本质就是一个单页面应用，所有的页面渲染和事件处理，都在一个页面内进行，但又可以通过微信客户端调用原生的各种接口
+2. 微信的架构，是数据驱动的架构模式，它的UI和数据是分离的，所有的页面更新，都需要通过对数据的更改来实现
+3. 小程序分为两个部分webview和appService。其中webview主要用来展现UI ，appService有来处理业务逻辑、数据及接口调用。它们在两个进程中运行，通过系统层JSBridge实现通信，实现 UI 的渲染、事件的处理
+
+## bindtap和catchtap的区别是什么
+相同点：都是作为点击事件函数，就是点击时触发。
+不同点：bindtap是不会阻止冒泡事件的，catchtap是阻止冒泡的
+
+## 小程序wxml与标准的html的异同？
+相同：
+1. 都是用来描述页面的结构；
+2. 都由标签、属性等构成；
+
+不同：
+1. 标签名字不一样，且小程序标签更少，单一标签更多；
+2. 多了一些wx:if这样的属性以及 "{{}}" 这样的表达式</li>
+<li>WXML仅能在微信小程序开发者工具中预览，而HTML可以在浏览器内预览；</li>
+<li>组件封装不同，WXML对组件进行了重新封装，</li>
+<li>小程序运行在JS Core内，没有DOM树和window对象，小程序中无法使用window对象和document对象。</li>
+</ol>
+<h2 id="小程序简单介绍下三种事件对象的属性列表？"><a href="#小程序简单介绍下三种事件对象的属性列表？" class="headerlink" title="小程序简单介绍下三种事件对象的属性列表？"></a>小程序简单介绍下三种事件对象的属性列表？</h2><ol>
+<li>基础事件（BaseEvent）</li>
+</ol>
+<ul>
+<li>type:事件类型</li>
+<li>timeStamp：事件生成时的时间戳</li>
+<li>target：触发事件的组件的属性值集合</li>
+<li>currentTarget：当前组件的一些属性集合</li>
+</ul>
+<ol start="2">
+<li>自定义事件（CustomEvent）</li>
+</ol>
+<ul>
+<li>detail</li>
+</ul>
+<ol start="3">
+<li>触摸事件（TouchEvent）</li>
+</ol>
+<ul>
+<li>touches</li>
+<li>changedTouches</li>
+</ul>
+<h2 id="小程序有哪些参数传值的方法"><a href="#小程序有哪些参数传值的方法" class="headerlink" title="小程序有哪些参数传值的方法?"></a>小程序有哪些参数传值的方法?</h2><ol>
+<li>给 HTML 元素添加 data-*属性来传递我们需要的值，然后通过 e.currentTarget.dataset 或 onload的 param参数获取。但 data -名称 不能有大写字母和不可以存放对象</li>
+<li>设置id的方法标识来传值通过e.currentTarget.id获取设置的id的值,然后通过设置全局对象的方式来传递数值</li>
+<li>在navigator中添加参数传值</li>
+<li>全局变量：在globalData中增加属性，再用getApp()获取属性，修改属性值</li>
+<li>子组件向父组件传值（triggerEvent）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// myEventDetail 对象，提供给事件监听函数的参数数据</span></span><br><span class="line"><span class="comment">// changeNaviIndex 是自定义名称事件，父组件中监听使用</span></span><br><span class="line"><span class="built_in">this</span>.triggerEvent(<span class="string">&#x27;changeNaviIndex&#x27;</span>, myEventDetail)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 注意这里写的事件监听名字--&gt;</span><br><span class="line">&lt;w-child bind:changeNaviIndex=&quot;onGetIndex&quot; /&gt;</span><br></pre></td></tr></table></figure></li>
+<li> 父组件向子组件传值（properties）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;w-child fatherName=&#x27;winne&#x27; fatherAge=&#x27;22&#x27;&gt;&lt;/w-child&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">	properties: &#123;  <span class="comment">// 在这里拿到了数据之后可以直接使用了（在wxml模板渲染，或者js中使用this.data.fatherName/this.properties.fatherName 都能获取到），不要直接修改properties属性中的数据</span></span><br><span class="line">  <span class="attr">fatherName</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">fatherAge</span>: <span class="built_in">Number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="微信小程序的优劣势？"><a href="#微信小程序的优劣势？" class="headerlink" title="微信小程序的优劣势？"></a>微信小程序的优劣势？</h2><p>优势：</p>
+<ol>
+<li>无需下载，通过搜索和扫一扫就可以打开。</li>
+<li>良好的用户体验：打开速度快。</li>
+<li>开发成本要比App要低。</li>
+<li>安卓上可以添加到桌面，与原生App差不多。</li>
+<li>为用户提供良好的安全保障。小程序的发布，微信拥有一套严格的审查流程，不能通过审查的小程序是无法发布到线上的。</li>
+</ol>
+<p>劣势：</p>
+<ol>
+<li>限制较多。页面大小不能超过1M。不能打开超过5个层级的页面。</li>
+<li>推广面窄，不能分享朋友圈，只能通过分享给朋友，附近小程序推广。其中附近小程序也受到微信的限制。</li>
+</ol>
+
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2022/08/14/3.%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2022/08/14/3.%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/";
+            const title         = "「3.微信小程序合集」";
+            const excerpt       = `微信小程序是单页应用吗?是，通过路由进行页面切换
+小程序的开发，发送一个请求，怎么请求数据的
+在微信小程序进行网络通信，只能和指定的域名进行通信服务器域名在：小程序后台=&gt; 开发=&gt; 开发设置 =&gt; 服务器域名中配置...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a>
+                </div>
+                <div class="pull-date">
+                <span>最后编辑：2022-10-20</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 4.css合集" href="/2022/08/14/4.css合集/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 5.打包" href="/2022/08/14/5.打包/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">念念不忘，必有回响</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%98%AF%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8%E5%90%97"><span class="toc-text">微信小程序是单页应用吗?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%80%E5%8F%91%EF%BC%8C%E5%8F%91%E9%80%81%E4%B8%80%E4%B8%AA%E8%AF%B7%E6%B1%82%EF%BC%8C%E6%80%8E%E4%B9%88%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E7%9A%84"><span class="toc-text">小程序的开发，发送一个请求，怎么请求数据的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%95%B0%E6%8D%AE%E6%80%8E%E4%B9%88%E5%90%8C%E6%AD%A5%E6%B8%B2%E6%9F%93"><span class="toc-text">小程序中数据怎么同步渲染</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BA%94%E7%94%A8%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">微信小程序应用的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">微信小程序页面的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">微信小程序组件的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8Frpx%E5%8D%95%E4%BD%8D"><span class="toc-text">小程序rpx单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8Evue%E5%8C%BA%E5%88%AB"><span class="toc-text">微信小程序与vue区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%8B%E4%B8%89%E7%A7%8D%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8%EF%BC%9F"><span class="toc-text">小程序简单介绍下三种事件对象的属性列表？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%82%E6%95%B0%E4%BC%A0%E5%80%BC%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">小程序有哪些参数传值的方法?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BC%98%E5%8A%A3%E5%8A%BF%EF%BC%9F"><span class="toc-text">微信小程序的优劣势？</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E5%AE%89%E5%85%A8/">性能优化与安全</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%93%E5%8C%85/">打包</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99/">正则</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86/">零散知识</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/HTTP/" style="font-size: 0.6em;">HTTP</a> <a href="/tags/Vue/" style="font-size: 0.73em;">Vue</a> <a href="/tags/css/" style="font-size: 0.6em;">css</a> <a href="/tags/egg/" style="font-size: 0.6em;">egg</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 0.6em;">flex弹性布局</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/js/" style="font-size: 0.6em;">js</a> <a href="/tags/koa/" style="font-size: 0.6em;">koa</a> <a href="/tags/node/" style="font-size: 0.6em;">node</a> <a href="/tags/npm/" style="font-size: 0.6em;">npm</a> <a href="/tags/react/" style="font-size: 0.6em;">react</a> <a href="/tags/vue/" style="font-size: 0.8em;">vue</a> <a href="/tags/wamp/" style="font-size: 0.6em;">wamp</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.67em;">前端</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 0.6em;">开发工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 0.67em;">微信小程序</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E5%AE%89%E5%85%A8/" style="font-size: 0.6em;">性能优化与安全</a> <a href="/tags/%E6%89%93%E5%8C%85/" style="font-size: 0.6em;">打包</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/31/8.%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"><i class="fa  fa-book"></i> 8.开发工具</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/25/7.%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E5%AE%89%E5%85%A8/"><i class="fa  fa-book"></i> 7.性能优化与安全</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/16/6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93/"><i class="fa  fa-book"></i> 6.浏览器</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/14/5.%E6%89%93%E5%8C%85/"><i class="fa  fa-book"></i> 5.打包</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2022/08/14/3.%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/"><i class="fa  fa-book"></i> 3.微信小程序合集</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 橘知·部落 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by zengqm.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="3204190542"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
