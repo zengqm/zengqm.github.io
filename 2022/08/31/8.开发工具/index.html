@@ -3,7 +3,8 @@
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
-  <link rel="icon" href="">
+  
+  
   <title>8.开发工具 | 橘知·部落</title>
   <meta name="author" content="zengqm" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -22,14 +23,11 @@
 <meta property="og:site_name" content="橘知·部落">
 <meta property="og:description" content="git简易的命令行入门教程:git init (初始化本地仓库) -&gt; git remote add origin ‘仓库地址’(链接远程仓库) -&gt; git pull origin master (下拉主分支) -&gt;git add . (添加当前目录下所有更改到暂存区) -&gt; git commit -m ‘提交日志’ （提交到本地仓库）-&gt; git push (提交">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2022-08-30T23:38:55.615Z">
 <meta property="article:modified_time" content="2022-08-30T23:45:39.121Z">
 <meta property="article:author" content="zengqm">
 <meta property="article:tag" content="开发工具">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/null">
-<meta name="twitter:site" content="@null">
   
   <!-- 站点验证相关 -->
   
@@ -38,41 +36,31 @@
     
   
   <!-- 样式表文件 -->
-  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
   
-    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
-  
-  
-  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
-  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
   
   
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
   
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
-    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
   
   
   <style>
     
-      .kratos-cover.kratos-cover-2 {
-        background-image: url('/images/banner.webp');
-      }
-    
-    
-      @media(min-width:768px) {
-        body.custom-background {
-          background-image: url('/images/bg.webp');
-        }
-      }
     
   </style>
   
@@ -90,11 +78,6 @@
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
                                     
-                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
-                                    
-                                
-                                    
-                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
                                     
                                 
                             </ul>
@@ -136,16 +119,20 @@
 
         
 
-            <article>
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/31/8.%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center">8.开发工具</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">8.开发工具</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><i class="fa fa-calendar"></i> 2022-08-31</li>
-                <li><i class="fa fa-user"></i> 作者 zengqm</li>
+                <li><time datetime="2022-08-30T23:38:55.615Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-08-31</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">zengqm</span>
+                </li>
                 <li>
                     <i class="fa fa-edit"></i> 
                     
@@ -158,16 +145,20 @@
             </ul>
         </header>
         <div class="kratos-post-content">
+            
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                本文最后编辑于 <time datetime="1661903139121"></time> 前，其中的内容可能需要更新。
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1661903139121"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
-                <div class="kratos-post-inner-toc">
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
                     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E6%98%93%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简易的命令行入门教程:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">图</span></a></li></ol>
                 </div>
             
             <hr />
-            <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="简易的命令行入门教程"><a href="#简易的命令行入门教程" class="headerlink" title="简易的命令行入门教程:"></a>简易的命令行入门教程:</h2><p>git init (初始化本地仓库) -&gt; git remote add origin ‘仓库地址’(链接远程仓库) -&gt; git pull origin master (下拉主分支) -&gt;git add . (添加当前目录下所有更改到暂存区) -&gt; git commit -m ‘提交日志’ （提交到本地仓库）-&gt; git push (提交到远程仓库)</p>
+            <div itemprop="articleBody"><h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="简易的命令行入门教程"><a href="#简易的命令行入门教程" class="headerlink" title="简易的命令行入门教程:"></a>简易的命令行入门教程:</h2><p>git init (初始化本地仓库) -&gt; git remote add origin ‘仓库地址’(链接远程仓库) -&gt; git pull origin master (下拉主分支) -&gt;git add . (添加当前目录下所有更改到暂存区) -&gt; git commit -m ‘提交日志’ （提交到本地仓库）-&gt; git push (提交到远程仓库)</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//克隆test到本地</span><br><span class="line">git clone git@gitee.com:li_ji_ji/test.git</span><br><span class="line">//进入test文件夹</span><br><span class="line">cd test</span><br><span class="line">//查看</span><br><span class="line">ls</span><br><span class="line">//创建文件</span><br><span class="line">touch b.md</span><br><span class="line">//提交所有更改到暂存区</span><br><span class="line">git add .</span><br><span class="line">//查看差异</span><br><span class="line">git status</span><br><span class="line">//提交日志</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">//链接远程仓</span><br><span class="line">git remote add origin git@gitee.com:linwei_wei/direction.git</span><br><span class="line">//推送</span><br><span class="line">git push -u origin master</span><br><span class="line">//本地新建分支</span><br><span class="line">git branch newBranch</span><br><span class="line">//切换分支</span><br><span class="line">git checkout newBranch</span><br></pre></td></tr></table></figure>
 
 <p>推送项目的一般步骤：</p>
@@ -185,11 +176,11 @@
 <li>canvas<br>简介：<br>是H5新增的组件，就像一块幕布，一个可以使用脚本（通常为Javascript）在其中绘制图形的HTML元素，他可以用来制作各种图、表，或者一些动画，同时还可以实现动画、缩放、各种过滤和像素 转换等高级操作。</li>
 </ol>
 <p>特点：<br>canvas 元素是html5的核心功能之一，使用 JavaScript 在网页上绘制图像。<br>画布是一个矩形区域，您可以控制其每一像素。<br>每次更改某个canvas元素，此canvas元素都需要整体重绘。<br>无法只修改某个canvas元素的某一部份。<br>canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。<br>canvas 元素本身没有绘图能力。</p>
-
+</div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
-                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
             </div>
         
         <footer class="kratos-entry-footer clearfix">
@@ -274,7 +265,7 @@
                     <a class="tag-none-link" href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a>
                 </div>
                 <div class="pull-date">
-                <span>最后编辑：2022-08-31</span>
+                    <time datetime="2022-08-30T23:45:39.121Z" itemprop="dateModified">最后编辑：2022-08-31</time>
                 </div>
             </div>
         </footer>
@@ -309,22 +300,48 @@
     <div class="photo-background"></div>
     <div class="photo-wrapper clearfix">
         <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" />
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
         </div>
     </div>
     <div class="textwidget">
         <p class="text-center">念念不忘，必有回响</p>
     </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                30
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                15
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                21
+            </span>
+        </a>
+    </div>
 </aside>
             
                     <div class="sticky-area">
                 
-                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
     <div class="photo-background"></div>
     <h4 class="widget-title no-after">
         <i class="fa fa-compass"></i>
         文章目录
-        <span class="toc-progress-bar"></span>
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
         <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E6%98%93%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B"><span class="toc-text">简易的命令行入门教程:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE"><span class="toc-text">图</span></a></li></ol>
@@ -448,43 +465,26 @@
 </div>
 <footer>
     <div id="footer"  class="ap-lrc"  >
-        <div class="kr-tool text-center">
-            <div class="tool">
-                
-                    <div class="box search-box">
-                        <a href="/search/">
-                            <span class="fa fa-search"></span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
-                
-                
-            </div>
-            <div class="box gotop-box">
-                <span class="fa fa-chevron-up"></span>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         
-                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
                         
                         
                         
-                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
-                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                        
+                        
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
-                            <li>&copy; 2022 橘知·部落 版权所有.</li>
+                            <li>&copy; 2023 橘知·部落 版权所有.</li>
                             <li>本站已运行<span id="span_dt">Loading...</span></li>
                         </div>
                         <div>
@@ -503,13 +503,34 @@
                 </div>
             </div>
         </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
     </div>
 </footer>
 </div>
 </div>
 
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
 <script>
     if (!window.kr) {
         window.kr = {};
@@ -523,9 +544,9 @@
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
     
-    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
     <meting-js
         server="netease"
         type="playlist"
@@ -537,14 +558,10 @@
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 
 

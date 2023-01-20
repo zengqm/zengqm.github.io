@@ -3,7 +3,8 @@
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
-  <link rel="icon" href="">
+  
+  
   <title>vue3 | 橘知·部落</title>
   <meta name="author" content="zengqm" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -22,14 +23,11 @@
 <meta property="og:site_name" content="橘知·部落">
 <meta property="og:description" content="Vue3 新特性: 数据响应式，ES6的proxy代替了ES5的object.defineProperty  -解决了对象数组更新后的检测，优化了监听响应式的性能-原监听对象属性的变化，需要一个个对属性递归监听，现在是proxy将整个对象劫持2. 虚拟dom新算法，更小，更快3. 提供了组合式api，能更好的逻辑复用4. template 模板可以有多个根元素5. 源码用 typescript 重">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2022-07-14T15:52:06.369Z">
 <meta property="article:modified_time" content="2022-07-16T07:41:28.538Z">
 <meta property="article:author" content="zengqm">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/null">
-<meta name="twitter:site" content="@null">
   
   <!-- 站点验证相关 -->
   
@@ -38,41 +36,31 @@
     
   
   <!-- 样式表文件 -->
-  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
   
-    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
-  
-  
-  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
-  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
   
   
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
   
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
-    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
   
   
   <style>
     
-      .kratos-cover.kratos-cover-2 {
-        background-image: url('/images/banner.webp');
-      }
-    
-    
-      @media(min-width:768px) {
-        body.custom-background {
-          background-image: url('/images/bg.webp');
-        }
-      }
     
   </style>
   
@@ -90,11 +78,6 @@
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
                                     
-                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
-                                    
-                                
-                                    
-                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
                                     
                                 
                             </ul>
@@ -136,16 +119,20 @@
 
         
 
-            <article>
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/14/VUE3/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center">vue3</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">vue3</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><i class="fa fa-calendar"></i> 2022-07-14</li>
-                <li><i class="fa fa-user"></i> 作者 zengqm</li>
+                <li><time datetime="2022-07-14T15:52:06.369Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-07-14</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">zengqm</span>
+                </li>
                 <li>
                     <i class="fa fa-edit"></i> 
                     
@@ -158,16 +145,20 @@
             </ul>
         </header>
         <div class="kratos-post-content">
+            
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                本文最后编辑于 <time datetime="1657957288538"></time> 前，其中的内容可能需要更新。
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1657957288538"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
-                <div class="kratos-post-inner-toc">
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
                     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue3-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">Vue3 新特性:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E5%BC%8FAPI%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">组合式API：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a></li></ol>
                 </div>
             
             <hr />
-            <h1 id="Vue3-新特性"><a href="#Vue3-新特性" class="headerlink" title="Vue3 新特性:"></a>Vue3 新特性:</h1><ol>
+            <div itemprop="articleBody"><h1 id="Vue3-新特性"><a href="#Vue3-新特性" class="headerlink" title="Vue3 新特性:"></a>Vue3 新特性:</h1><ol>
 <li>数据响应式，ES6的proxy代替了ES5的object.defineProperty</li>
 </ol>
 <p>-解决了对象数组更新后的检测，优化了监听响应式的性能<br>-原监听对象属性的变化，需要一个个对属性递归监听，现在是proxy将整个对象劫持<br>2. 虚拟dom新算法，更小，更快<br>3. 提供了组合式api，能更好的逻辑复用<br>4. template 模板可以有多个根元素<br>5. 源码用 typescript 重写, 有更好的类型推导(类型检测更为严格, 更稳定)</p>
@@ -334,11 +325,11 @@
 <ol start="6">
 <li>见文档 <a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/guide/migration/introduction.html">https://v3.cn.vuejs.org/guide/migration/introduction.html</a></li>
 </ol>
-
+</div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
-                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
             </div>
         
         <footer class="kratos-entry-footer clearfix">
@@ -426,7 +417,7 @@
                     <a class="tag-none-link" href="/tags/Vue/" rel="tag">Vue</a>
                 </div>
                 <div class="pull-date">
-                <span>最后编辑：2022-07-16</span>
+                    <time datetime="2022-07-16T07:41:28.538Z" itemprop="dateModified">最后编辑：2022-07-16</time>
                 </div>
             </div>
         </footer>
@@ -465,22 +456,48 @@
     <div class="photo-background"></div>
     <div class="photo-wrapper clearfix">
         <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" />
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
         </div>
     </div>
     <div class="textwidget">
         <p class="text-center">念念不忘，必有回响</p>
     </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                30
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                15
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                21
+            </span>
+        </a>
+    </div>
 </aside>
             
                     <div class="sticky-area">
                 
-                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
     <div class="photo-background"></div>
     <h4 class="widget-title no-after">
         <i class="fa fa-compass"></i>
         文章目录
-        <span class="toc-progress-bar"></span>
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
         <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue3-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-text">Vue3 新特性:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E5%BC%8FAPI%EF%BC%9A"><span class="toc-text">组合式API：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol>
@@ -604,43 +621,26 @@
 </div>
 <footer>
     <div id="footer"  class="ap-lrc"  >
-        <div class="kr-tool text-center">
-            <div class="tool">
-                
-                    <div class="box search-box">
-                        <a href="/search/">
-                            <span class="fa fa-search"></span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
-                
-                
-            </div>
-            <div class="box gotop-box">
-                <span class="fa fa-chevron-up"></span>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         
-                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
                         
                         
                         
-                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
-                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                        
+                        
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
-                            <li>&copy; 2022 橘知·部落 版权所有.</li>
+                            <li>&copy; 2023 橘知·部落 版权所有.</li>
                             <li>本站已运行<span id="span_dt">Loading...</span></li>
                         </div>
                         <div>
@@ -659,13 +659,34 @@
                 </div>
             </div>
         </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
     </div>
 </footer>
 </div>
 </div>
 
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
 <script>
     if (!window.kr) {
         window.kr = {};
@@ -679,9 +700,9 @@
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
     
-    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
     <meting-js
         server="netease"
         type="playlist"
@@ -693,14 +714,10 @@
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 
 

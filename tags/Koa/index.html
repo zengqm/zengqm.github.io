@@ -3,8 +3,9 @@
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
-  <link rel="icon" href="">
-  <title>橘知·部落</title>
+  
+  
+  <title>标签: koa | 橘知·部落</title>
   <meta name="author" content="zengqm" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -17,17 +18,14 @@
   
   <meta name="description" content="念念不忘，必有回响">
 <meta property="og:type" content="website">
-<meta property="og:title" content="橘知·部落">
+<meta property="og:title" content="标签: koa">
 <meta property="og:url" content="http://example.com/tags/koa/index.html">
 <meta property="og:site_name" content="橘知·部落">
 <meta property="og:description" content="念念不忘，必有回响">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/null">
 <meta property="article:author" content="zengqm">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/null">
-<meta name="twitter:site" content="@null">
   
   <!-- 站点验证相关 -->
   
@@ -36,41 +34,31 @@
     
   
   <!-- 样式表文件 -->
-  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
   
-    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
-  
-  
-  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
-  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
   
   
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
   
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
-    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
   
   
   <style>
     
-      .kratos-cover.kratos-cover-2 {
-        background-image: url('/images/banner.webp');
-      }
-    
-    
-      @media(min-width:768px) {
-        body.custom-background {
-          background-image: url('/images/bg.webp');
-        }
-      }
     
   </style>
   
@@ -88,11 +76,6 @@
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
                                     
-                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
-                                    
-                                
-                                    
-                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
                                     
                                 
                             </ul>
@@ -134,10 +117,33 @@
 
         
 
+            <!-- Breadcrumb for tag & category page -->
+
+    <article class="kratos-hentry kratos-entry-border-new clearfix">
+        <div class="kratos-breadcrumb">
+            <a href="/">
+                <i class="fa fa-home"></i>
+            </a>
+            <i class="fa fa-angle-right"></i>
             
+                <a href="/tags/">
+                    标签
+                </a>
+                <i class="fa fa-angle-right"></i>
+                <a href="/tags/koa">
+                    koa
+                </a>
+            
+            
+        </div>
+    </article>
+
+
+
+
     
     
-        <article class="kratos-hentry clearfix">
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
             <div class="kratos-entry-border-new clearfix">
                 
                     <div class="pin-top wrapper">
@@ -147,17 +153,17 @@
                 <div class="kratos-entry-thumb-new">
                     <a href="/2021/09/19/Koa%E6%A1%86%E6%9E%B6+MongoDB/">
                         
-                            <img class="kratos-entry-thumb-new-img">
+                            <img class="kratos-entry-thumb-new-img" alt="">
                         
                     </a>
                 </div>
                 <div class="kratos-post-inner-new">
                     <header class="kratos-entry-header-new">
                             <a class="label-link" href="/categories/Node/">Node</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2021/09/19/Koa%E6%A1%86%E6%9E%B6+MongoDB/">Koa框架+MongoDB</a>
+                        <h2 class="kratos-entry-title-new"><a href="/2021/09/19/Koa%E6%A1%86%E6%9E%B6+MongoDB/" itemprop="mainEntityOfPage"><span itemprop="name headline">Koa框架+MongoDB</span></a>
                     </header>
                     <div class="kratos-entry-content-new">
-                        <p>
+                        <p itemProp="description">
                             
                                 Koa框架+MongoDB教学视频参考https://www.bilibili.com/video/BV15b411z7qj
 mongodb启动先管理员运行net start MongoDB
@@ -168,10 +174,9 @@ mongodb启动先管理员运行net start MongoDB
                 </div>
                 <footer class="kratos-post-meta-new">
                     <span class="pull-left">
-                        <a>
-                            <i class="fa fa-calendar"></i>
-                            2021-09-19
-                        </a>
+                        <time datetime="2021-09-19T15:23:08.914Z" itemprop="datePublished">
+                            <a><i class="fa fa-calendar"></i> 2021-09-19</a>
+                        </time>
                         <a>
                             
                                 <i class="fa fa-tags"></i>
@@ -225,11 +230,37 @@ mongodb启动先管理员运行net start MongoDB
     <div class="photo-background"></div>
     <div class="photo-wrapper clearfix">
         <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" />
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
         </div>
     </div>
     <div class="textwidget">
         <p class="text-center">念念不忘，必有回响</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                30
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                15
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                21
+            </span>
+        </a>
     </div>
 </aside>
             
@@ -350,43 +381,26 @@ mongodb启动先管理员运行net start MongoDB
 </div>
 <footer>
     <div id="footer"  class="ap-lrc"  >
-        <div class="kr-tool text-center">
-            <div class="tool">
-                
-                    <div class="box search-box">
-                        <a href="/search/">
-                            <span class="fa fa-search"></span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
-                
-                
-            </div>
-            <div class="box gotop-box">
-                <span class="fa fa-chevron-up"></span>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         
-                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
                         
                         
                         
-                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
-                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                        
+                        
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
-                            <li>&copy; 2022 橘知·部落 版权所有.</li>
+                            <li>&copy; 2023 橘知·部落 版权所有.</li>
                             <li>本站已运行<span id="span_dt">Loading...</span></li>
                         </div>
                         <div>
@@ -405,13 +419,34 @@ mongodb启动先管理员运行net start MongoDB
                 </div>
             </div>
         </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
     </div>
 </footer>
 </div>
 </div>
 
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
 <script>
     if (!window.kr) {
         window.kr = {};
@@ -425,9 +460,9 @@ mongodb启动先管理员运行net start MongoDB
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
     
-    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
     <meting-js
         server="netease"
         type="playlist"
@@ -439,14 +474,10 @@ mongodb启动先管理员运行net start MongoDB
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 
 

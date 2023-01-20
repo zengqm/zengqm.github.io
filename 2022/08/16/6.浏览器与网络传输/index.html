@@ -3,7 +3,8 @@
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
-  <link rel="icon" href="">
+  
+  
   <title>6.浏览器 | 橘知·部落</title>
   <meta name="author" content="zengqm" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -22,14 +23,11 @@
 <meta property="og:site_name" content="橘知·部落">
 <meta property="og:description" content="浏览器在浏览器中输入url并回车会发生什么？1.浏览器拿到url后解析url，获取到域名2.通过域名解析服务器进行域名解析,获取到域名对应的ip地址3.接下来就是对该ip地址对应的服务器发起tcp连接4.通过三次握手，建立客户端和服务器的连接，就可以进行请求和传输数据了5.客户端拿到服务器传输过来的文件，最后由浏览器渲染到页面上。 【5.客户端拿到服务器传输过来的文件，浏览器会解析html源码创建">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2022-08-16T15:40:26.438Z">
 <meta property="article:modified_time" content="2022-09-12T02:33:42.208Z">
 <meta property="article:author" content="zengqm">
 <meta property="article:tag" content="浏览器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/null">
-<meta name="twitter:site" content="@null">
   
   <!-- 站点验证相关 -->
   
@@ -38,41 +36,31 @@
     
   
   <!-- 样式表文件 -->
-  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
   
-    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
-  
-  
-  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
-  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
   
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
   
   
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
   
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
-    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
   
   
   <style>
     
-      .kratos-cover.kratos-cover-2 {
-        background-image: url('/images/banner.webp');
-      }
-    
-    
-      @media(min-width:768px) {
-        body.custom-background {
-          background-image: url('/images/bg.webp');
-        }
-      }
     
   </style>
   
@@ -90,11 +78,6 @@
                             <ul id="kratos-primary-menu" class="sf-menu">
                                 
                                     
-                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
-                                    
-                                
-                                    
-                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
                                     
                                 
                             </ul>
@@ -136,16 +119,20 @@
 
         
 
-            <article>
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/6.%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center">6.浏览器</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">6.浏览器</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><i class="fa fa-calendar"></i> 2022-08-16</li>
-                <li><i class="fa fa-user"></i> 作者 zengqm</li>
+                <li><time datetime="2022-08-16T15:40:26.438Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-08-16</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">zengqm</span>
+                </li>
                 <li>
                     <i class="fa fa-edit"></i> 
                     
@@ -158,16 +145,20 @@
             </ul>
         </header>
         <div class="kratos-post-content">
+            
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                本文最后编辑于 <time datetime="1662950022208"></time> 前，其中的内容可能需要更新。
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1662950022208"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
-                <div class="kratos-post-inner-toc">
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
                     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5url%E5%B9%B6%E5%9B%9E%E8%BD%A6%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">在浏览器中输入url并回车会发生什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%9A%84%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">浏览器如何渲染页面的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-sessionStorage-localStorage-%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.</span> <span class="toc-text">cookie sessionStorage localStorage 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-session"><span class="toc-number">1.4.</span> <span class="toc-text">cookie session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E4%B8%8EsessionStorage"><span class="toc-number">1.5.</span> <span class="toc-text">session与sessionStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%B8%AA%E4%BC%9A%E8%BF%87%E6%9C%9F%E7%9A%84localStorage%EF%BC%8C%E8%AF%B4%E8%AF%B4%E6%83%B3%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">如何写一个会过期的localStorage，说说想法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4localstorage%E6%95%B0%E6%8D%AE"><span class="toc-number">1.7.</span> <span class="toc-text">如何定时删除localstorage数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage-%E8%83%BD%E8%B7%A8%E5%9F%9F%E5%90%97"><span class="toc-number">1.8.</span> <span class="toc-text">localStorage 能跨域吗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localstorage%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-number">1.9.</span> <span class="toc-text">localstorage的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BB%98%E3%80%81%E9%87%8D%E6%8E%92%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D"><span class="toc-number">1.10.</span> <span class="toc-text">重绘、重排区别如何避免</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AFEvent-loop"><span class="toc-number">1.11.</span> <span class="toc-text">事件循环Event loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="toc-number">1.12.</span> <span class="toc-text">浏览器垃圾回收机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-number">2.</span> <span class="toc-text">网络传输</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">跨域是什么？如何解决跨域？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.2.</span> <span class="toc-text">跨域解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsonp"><span class="toc-number">2.3.</span> <span class="toc-text">jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-number">2.4.</span> <span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cors"><span class="toc-number">2.5.</span> <span class="toc-text">cors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">2.6.</span> <span class="toc-text">nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%BB%A3%E7%90%86-%E4%B8%A4%E6%AC%A1%E8%B7%A8%E5%9F%9F"><span class="toc-number">2.7.</span> <span class="toc-text">Node中间件代理(两次跨域)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postMessage"><span class="toc-number">2.8.</span> <span class="toc-text">postMessage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket"><span class="toc-number">2.9.</span> <span class="toc-text">websocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#window-name-iframe"><span class="toc-number">2.10.</span> <span class="toc-text">window.name + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location-hash-iframe"><span class="toc-number">2.11.</span> <span class="toc-text">location.hash + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-domain-iframe"><span class="toc-number">2.12.</span> <span class="toc-text">document.domain + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E4%BF%9D%E6%8C%81%E5%89%8D%E5%90%8E%E7%AB%AF%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">2.13.</span> <span class="toc-text">有什么方法可以保持前后端实时通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81http-status"><span class="toc-number">2.14.</span> <span class="toc-text">常见http status</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%92%8Chttps"><span class="toc-number">2.15.</span> <span class="toc-text">http和https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%92%8CHTTPS%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.15.1.</span> <span class="toc-text">HTTP和HTTPS的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E4%B8%8EHTTPS%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.15.2.</span> <span class="toc-text">HTTP与HTTPS有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http1-x-%E5%92%8Chttp2-x%E5%8C%BA%E5%88%AB"><span class="toc-number">2.16.</span> <span class="toc-text">http1.x 和http2.x区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="toc-number">2.17.</span> <span class="toc-text">http请求方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET%E5%92%8CPOST%E5%8C%BA%E5%88%AB"><span class="toc-number">2.18.</span> <span class="toc-text">GET和POST区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="toc-number">2.19.</span> <span class="toc-text">http 缓存策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8B-HTTPS-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">2.20.</span> <span class="toc-text">介绍下 HTTPS 中间人攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-%E6%98%AF%E5%A6%82%E4%BD%95%E7%A1%AE%E4%BF%9D%E6%9C%89%E6%95%88%E4%BC%A0%E8%BE%93%E7%9A%84%EF%BC%8C%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-number">2.21.</span> <span class="toc-text">tcp 是如何确保有效传输的，拥塞控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-ip%E5%8D%8F%E8%AE%AE%E6%A0%88%E3%80%81%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.22.</span> <span class="toc-text">tcp&#x2F;ip协议栈、网络模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.23.</span> <span class="toc-text">OSI七层协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAajax%E8%BF%87%E7%A8%8B"><span class="toc-number">2.24.</span> <span class="toc-text">创建ajax过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios%E7%9A%84%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8"><span class="toc-number">2.25.</span> <span class="toc-text">axios的拦截器原理及应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">2.25.1.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.25.2.</span> <span class="toc-text">拦截器的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xhr-%E7%9A%84-readyState"><span class="toc-number">2.26.</span> <span class="toc-text">xhr 的 readyState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN"><span class="toc-number">2.27.</span> <span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cdn%E5%8A%A0%E9%80%9F%E5%8E%9F%E7%90%86"><span class="toc-number">2.28.</span> <span class="toc-text">cdn加速原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSL-%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%EF%BC%9F"><span class="toc-number">2.29.</span> <span class="toc-text">SSL 连接断开后如何恢复？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hosts-%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">2.30.</span> <span class="toc-text">hosts 文件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-number">2.31.</span> <span class="toc-text">什么是粘包问题，如何解决？</span></a></li></ol></li></ol>
                 </div>
             
             <hr />
-            <h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><h2 id="在浏览器中输入url并回车会发生什么？"><a href="#在浏览器中输入url并回车会发生什么？" class="headerlink" title="在浏览器中输入url并回车会发生什么？"></a>在浏览器中输入url并回车会发生什么？</h2><p>1.浏览器拿到url后解析url，获取到域名<br>2.通过域名解析服务器进行域名解析,获取到域名对应的ip地址<br>3.接下来就是对该ip地址对应的服务器发起tcp连接<br>4.通过三次握手，建立客户端和服务器的连接，就可以进行请求和传输数据了<br>5.客户端拿到服务器传输过来的文件，最后由浏览器渲染到页面上。</p>
+            <div itemprop="articleBody"><h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><h2 id="在浏览器中输入url并回车会发生什么？"><a href="#在浏览器中输入url并回车会发生什么？" class="headerlink" title="在浏览器中输入url并回车会发生什么？"></a>在浏览器中输入url并回车会发生什么？</h2><p>1.浏览器拿到url后解析url，获取到域名<br>2.通过域名解析服务器进行域名解析,获取到域名对应的ip地址<br>3.接下来就是对该ip地址对应的服务器发起tcp连接<br>4.通过三次握手，建立客户端和服务器的连接，就可以进行请求和传输数据了<br>5.客户端拿到服务器传输过来的文件，最后由浏览器渲染到页面上。</p>
 <p>【5.客户端拿到服务器传输过来的文件，浏览器会解析html源码创建一个dom树，<br>浏览器解析css代码计算出最终的样式数据，形成一个css对象模型，<br>利用dom树和css对象模型构建一个渲染树，<br>浏览器根据渲染树把页面绘制到屏幕上。】</p>
 <p>URL 解析<br>DNS 查询<br>TCP 连接<br>处理请求<br>接受响应<br>渲染页面</p>
 <h2 id="浏览器如何渲染页面的？"><a href="#浏览器如何渲染页面的？" class="headerlink" title="浏览器如何渲染页面的？"></a>浏览器如何渲染页面的？</h2><ol>
@@ -412,11 +403,11 @@
 <h2 id="cdn加速原理"><a href="#cdn加速原理" class="headerlink" title="cdn加速原理"></a>cdn加速原理</h2><h2 id="SSL-连接断开后如何恢复？"><a href="#SSL-连接断开后如何恢复？" class="headerlink" title="SSL 连接断开后如何恢复？"></a>SSL 连接断开后如何恢复？</h2><h2 id="hosts-文件是什么"><a href="#hosts-文件是什么" class="headerlink" title="hosts 文件是什么"></a>hosts 文件是什么</h2><p>hosts 文件是个没有扩展名的系统文件，其作用就是<code>将网址域名和其对应的 IP 地址建立一个关联“数据库”</code>，当用户在浏览器中输入一个 url 时，系统会首先自动从 hosts 文件中寻找对应的 IP 地址。</p>
 <h2 id="什么是粘包问题，如何解决？"><a href="#什么是粘包问题，如何解决？" class="headerlink" title="什么是粘包问题，如何解决？"></a>什么是粘包问题，如何解决？</h2><p>默认情况下，TCP 连接会采用延迟传送算法（Nagle 算法），在数据发送之前缓存他们。如果短时间有多个数据发送，会缓冲到一起作一次发送（缓冲大小是socket.bufferSize），这样可以减少 IO 消耗提高性能。（TCP 会出现这个问题，HTTP 协议解决了这个问题）</p>
 <p>解决方法:<br>多次发送之前间隔一个等待时间：处理简单，但是影响传输效率；<br>关闭 Nagle 算法：消耗资源高，整体性能下降；<br>封包/拆包：使用一些有标识来进行封包拆包（类似 HTTP 协议头尾）；</p>
-
+</div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
-                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
             </div>
         
         <footer class="kratos-entry-footer clearfix">
@@ -501,7 +492,7 @@
                     <a class="tag-none-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a>
                 </div>
                 <div class="pull-date">
-                <span>最后编辑：2022-09-12</span>
+                    <time datetime="2022-09-12T02:33:42.208Z" itemprop="dateModified">最后编辑：2022-09-12</time>
                 </div>
             </div>
         </footer>
@@ -540,22 +531,48 @@
     <div class="photo-background"></div>
     <div class="photo-wrapper clearfix">
         <div class="photo-wrapper-tip text-center">
-            <img class="about-photo" src="/images/avatar.webp" />
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
         </div>
     </div>
     <div class="textwidget">
         <p class="text-center">念念不忘，必有回响</p>
     </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                30
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                15
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                21
+            </span>
+        </a>
+    </div>
 </aside>
             
                     <div class="sticky-area">
                 
-                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
     <div class="photo-background"></div>
     <h4 class="widget-title no-after">
         <i class="fa fa-compass"></i>
         文章目录
-        <span class="toc-progress-bar"></span>
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
         <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-text">浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5url%E5%B9%B6%E5%9B%9E%E8%BD%A6%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">在浏览器中输入url并回车会发生什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%9A%84%EF%BC%9F"><span class="toc-text">浏览器如何渲染页面的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-sessionStorage-localStorage-%E5%8C%BA%E5%88%AB"><span class="toc-text">cookie sessionStorage localStorage 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-session"><span class="toc-text">cookie session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E4%B8%8EsessionStorage"><span class="toc-text">session与sessionStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%B8%AA%E4%BC%9A%E8%BF%87%E6%9C%9F%E7%9A%84localStorage%EF%BC%8C%E8%AF%B4%E8%AF%B4%E6%83%B3%E6%B3%95"><span class="toc-text">如何写一个会过期的localStorage，说说想法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4localstorage%E6%95%B0%E6%8D%AE"><span class="toc-text">如何定时删除localstorage数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage-%E8%83%BD%E8%B7%A8%E5%9F%9F%E5%90%97"><span class="toc-text">localStorage 能跨域吗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localstorage%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-text">localstorage的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BB%98%E3%80%81%E9%87%8D%E6%8E%92%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D"><span class="toc-text">重绘、重排区别如何避免</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AFEvent-loop"><span class="toc-text">事件循环Event loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">浏览器垃圾回收机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-text">网络传输</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%EF%BC%9F"><span class="toc-text">跨域是什么？如何解决跨域？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">跨域解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsonp"><span class="toc-text">jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cors"><span class="toc-text">cors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-text">nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%BB%A3%E7%90%86-%E4%B8%A4%E6%AC%A1%E8%B7%A8%E5%9F%9F"><span class="toc-text">Node中间件代理(两次跨域)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postMessage"><span class="toc-text">postMessage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket"><span class="toc-text">websocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#window-name-iframe"><span class="toc-text">window.name + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location-hash-iframe"><span class="toc-text">location.hash + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-domain-iframe"><span class="toc-text">document.domain + iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E4%BF%9D%E6%8C%81%E5%89%8D%E5%90%8E%E7%AB%AF%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1"><span class="toc-text">有什么方法可以保持前后端实时通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81http-status"><span class="toc-text">常见http status</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%92%8Chttps"><span class="toc-text">http和https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%92%8CHTTPS%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">HTTP和HTTPS的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E4%B8%8EHTTPS%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">HTTP与HTTPS有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http1-x-%E5%92%8Chttp2-x%E5%8C%BA%E5%88%AB"><span class="toc-text">http1.x 和http2.x区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="toc-text">http请求方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET%E5%92%8CPOST%E5%8C%BA%E5%88%AB"><span class="toc-text">GET和POST区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="toc-text">http 缓存策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8B-HTTPS-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-text">介绍下 HTTPS 中间人攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-%E6%98%AF%E5%A6%82%E4%BD%95%E7%A1%AE%E4%BF%9D%E6%9C%89%E6%95%88%E4%BC%A0%E8%BE%93%E7%9A%84%EF%BC%8C%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-text">tcp 是如何确保有效传输的，拥塞控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp-ip%E5%8D%8F%E8%AE%AE%E6%A0%88%E3%80%81%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-text">tcp&#x2F;ip协议栈、网络模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-text">OSI七层协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAajax%E8%BF%87%E7%A8%8B"><span class="toc-text">创建ajax过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios%E7%9A%84%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8"><span class="toc-text">axios的拦截器原理及应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">拦截器的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xhr-%E7%9A%84-readyState"><span class="toc-text">xhr 的 readyState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN"><span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cdn%E5%8A%A0%E9%80%9F%E5%8E%9F%E7%90%86"><span class="toc-text">cdn加速原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSL-%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E5%90%8E%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D%EF%BC%9F"><span class="toc-text">SSL 连接断开后如何恢复？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hosts-%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">hosts 文件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%B2%98%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-text">什么是粘包问题，如何解决？</span></a></li></ol></li></ol>
@@ -679,43 +696,26 @@
 </div>
 <footer>
     <div id="footer"  class="ap-lrc"  >
-        <div class="kr-tool text-center">
-            <div class="tool">
-                
-                    <div class="box search-box">
-                        <a href="/search/">
-                            <span class="fa fa-search"></span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
-                
-                
-            </div>
-            <div class="box gotop-box">
-                <span class="fa fa-chevron-up"></span>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 footer-list text-center">
                     <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
                         
                         
-                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
                         
                         
                         
-                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
-                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                        
+                        
+                        
+                        <!-- New links -->
                         
                     </ul>
                     <ul class="kratos-copyright">
                         <div>
-                            <li>&copy; 2022 橘知·部落 版权所有.</li>
+                            <li>&copy; 2023 橘知·部落 版权所有.</li>
                             <li>本站已运行<span id="span_dt">Loading...</span></li>
                         </div>
                         <div>
@@ -734,13 +734,34 @@
                 </div>
             </div>
         </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
     </div>
 </footer>
 </div>
 </div>
 
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
 <script>
     if (!window.kr) {
         window.kr = {};
@@ -754,9 +775,9 @@
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
     
-    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
     <meting-js
         server="netease"
         type="playlist"
@@ -768,14 +789,10 @@
 
 
 
-    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 
 
