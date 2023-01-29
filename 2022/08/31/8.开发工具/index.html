@@ -24,7 +24,7 @@
 <meta property="og:description" content="git简易的命令行入门教程:git init (初始化本地仓库) -&gt; git remote add origin ‘仓库地址’(链接远程仓库) -&gt; git pull origin master (下拉主分支) -&gt;git add . (添加当前目录下所有更改到暂存区) -&gt; git commit -m ‘提交日志’ （提交到本地仓库）-&gt; git push (提交">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-30T23:38:55.615Z">
-<meta property="article:modified_time" content="2022-08-30T23:45:39.121Z">
+<meta property="article:modified_time" content="2023-01-29T05:50:56.172Z">
 <meta property="article:author" content="zengqm">
 <meta property="article:tag" content="开发工具">
 <meta name="twitter:card" content="summary">
@@ -137,7 +137,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~2.18K
+                        ~2.08K
                     
                     字
                 </li>
@@ -148,7 +148,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1661903139121"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1674971456172"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -159,10 +159,8 @@
             
             <hr />
             <div itemprop="articleBody"><h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="简易的命令行入门教程"><a href="#简易的命令行入门教程" class="headerlink" title="简易的命令行入门教程:"></a>简易的命令行入门教程:</h2><p>git init (初始化本地仓库) -&gt; git remote add origin ‘仓库地址’(链接远程仓库) -&gt; git pull origin master (下拉主分支) -&gt;git add . (添加当前目录下所有更改到暂存区) -&gt; git commit -m ‘提交日志’ （提交到本地仓库）-&gt; git push (提交到远程仓库)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//克隆test到本地</span><br><span class="line">git clone git@gitee.com:li_ji_ji/test.git</span><br><span class="line">//进入test文件夹</span><br><span class="line">cd test</span><br><span class="line">//查看</span><br><span class="line">ls</span><br><span class="line">//创建文件</span><br><span class="line">touch b.md</span><br><span class="line">//提交所有更改到暂存区</span><br><span class="line">git add .</span><br><span class="line">//查看差异</span><br><span class="line">git status</span><br><span class="line">//提交日志</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">//链接远程仓</span><br><span class="line">git remote add origin git@gitee.com:linwei_wei/direction.git</span><br><span class="line">//推送</span><br><span class="line">git push -u origin master</span><br><span class="line">//本地新建分支</span><br><span class="line">git branch newBranch</span><br><span class="line">//切换分支</span><br><span class="line">git checkout newBranch</span><br></pre></td></tr></table></figure>
-
 <p>推送项目的一般步骤：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git init  //初始化仓库</span><br><span class="line">git branch  //查看分支</span><br><span class="line">git checkout -b master//创建并进入master分支</span><br><span class="line">git add .  //添加文件夹内的所以内容</span><br><span class="line">git commit -m &#x27;你的注释&#x27;     //它提交到版本库</span><br><span class="line">git remote add origin 你的远程库地址  //连接远程仓库</span><br><span class="line">git pull --rebase origin master  //将远程存储库中的更改合并到当前分支中</span><br><span class="line">git push -u origin master  //推到远程仓库 master  分支</span><br><span class="line">git status  //查看状态</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">git clone &#x27;仓库地址&#x27;</span><br><span class="line">cd &#x27;项目文件夹名称&#x27;</span><br><span class="line">// 从主分支创建并切换到分支newBranch   // git checkout 远程分支名称(一般是origin/xxx) -b 本地分支名称（一般是xxx）</span><br><span class="line">git checkout master -b newBranch</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#x27;提交日志&#x27;</span><br><span class="line">// 切换到待合并分支dev</span><br><span class="line">git checkout dev</span><br><span class="line">//将newBranch合并到dev</span><br><span class="line">git merge newBranch</span><br><span class="line">//将dev推送到远程</span><br><span class="line">git push origin dev</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// (如果不是首次需要) 下拉远程分支</span><br><span class="line">git pull origin master</span><br><span class="line"></span><br><span class="line">// 删除本地分支dev</span><br><span class="line">git branch -d dev</span><br><span class="line">// 删除远程分支newBranch</span><br><span class="line">git push origin -d newBranch</span><br><span class="line"></span><br><span class="line">// 查看所有分支</span><br><span class="line">git branch -a</span><br><span class="line">// 查看该分支 列出修改过的(绿色标识)、新创建的(红色标识)、已经暂存但未提交的文件(白色标识)</span><br><span class="line">git status</span><br><span class="line">// 查看所有提交日志</span><br><span class="line">git log</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><ol>
 <li>ECharts</li>
@@ -265,7 +263,7 @@
                     <a class="tag-none-link" href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-08-30T23:45:39.121Z" itemprop="dateModified">最后编辑：2022-08-31</time>
+                    <time datetime="2023-01-29T05:50:56.172Z" itemprop="dateModified">最后编辑：2023-01-29</time>
                 </div>
             </div>
         </footer>
